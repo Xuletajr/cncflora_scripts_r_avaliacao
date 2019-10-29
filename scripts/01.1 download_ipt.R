@@ -18,6 +18,3 @@ source("./functions/change_NA_to_df.R")
 pag <- "http://ipt.jbrj.gov.br/jbrj/archive.do?r=lista_especies_flora_brasil"
 download(url = pag, destfile = "iptflora", mode = "wb") # Para sistema operacional windows só funciona com mode = "wb"
 unzip("iptflora", exdir = "./ipt") # salvar em pasta "ipt" dentro da pasta de trabalho
-
-
-

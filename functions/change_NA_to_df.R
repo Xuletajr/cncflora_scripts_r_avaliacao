@@ -1,3 +1,5 @@
+# Função disponível no GitHub de Andrea S. Tapia:
+# https://github.com/AndreaSanchezTapia/CNCFlora_IUCN_LC/blob/master/scripts/change_NA_to_df.R
 
 change_others_to_dataframe <- function(x) {
     # If x is a data frame, do nothing and return x
