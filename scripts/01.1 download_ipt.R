@@ -54,3 +54,5 @@ head(distribution_mod)
 # Exportar planilha csv com a distribuição modificada
 write.csv(distribution_mod, "./ipt/distribution_modified.csv", 
           fileEncoding = "UTF-8")
+
+# Formatar a forma de vida das espécie (lifeForm)---
