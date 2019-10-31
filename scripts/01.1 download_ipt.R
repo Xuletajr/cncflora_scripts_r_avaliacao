@@ -102,3 +102,6 @@ lf_habitat %>%
     head(.)
 lf_hab %>%
     head(.)
+
+# Exportar planilha csv com a forma de vida das árvores modificada
+write.csv(lf_hab, "./ipt/lf_hab_modified.csv", fileEncoding = "UTF-8")
