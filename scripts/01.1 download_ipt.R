@@ -96,3 +96,9 @@ hab2 <- hab %>%
    purrr::map(~distinct(.))
 
 hab3 <- bind_rows(hab2)
+
+lf_hab <- lf3 %>% left_join(veg3) %>% left_join(hab3)
+lf_habitat %>%
+    head(.)
+lf_hab %>%
+    head(.)
