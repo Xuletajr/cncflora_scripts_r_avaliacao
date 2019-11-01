@@ -9,9 +9,9 @@ library(tidyr)
 library(stringr)
 library(jsonlite)
 library(downloader)
-source("./functions/change_NA_to_df.R") 
-# Função disponível no GitHub de Andrea S. Tapia:
+# Função change_NA_to_df.R disponível no GitHub de Andrea S. Tapia:
 # https://github.com/AndreaSanchezTapia/CNCFlora_IUCN_LC/blob/master/scripts/change_NA_to_df.R
+source("./functions/change_NA_to_df.R") 
 
 # Baixar dados do Flora do Projeto Flora do Brasil 2020 (IPT)---
 pag <- "http://ipt.jbrj.gov.br/jbrj/archive.do?r=lista_especies_flora_brasil"
