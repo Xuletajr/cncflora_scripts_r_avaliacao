@@ -4,7 +4,7 @@
 
 ***
 
-# Repositório com scripts R para avaliação de risco de extinção da flora
+# Repositório com scripts R para preparação de dados para avaliação de risco de extinção da flora
 
 ***
 
