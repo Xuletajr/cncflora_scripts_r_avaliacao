@@ -20,7 +20,7 @@
   02. Cruzar inforamações **FB2020**
   03. Baixar, organizar e juntar dados do **GBIF**, **speciesLink** e **REFLORA**
   04. Limpezas espaciais e adicionar centróides dos municípios nas coordenadas
-  05. Estimando EOO e AOO 
+  05. Estimando **EOO** e **AOO** 
   06. Buscando uso das espécies (fonte: *Useful Tropical Plants Database*)
   07. Cruzar o tipo de vegetação com código **IUCN**
   08. Apêndice CITES (*Convention on International Trade in Endangered Species of Wild Fauna and Flora*)
