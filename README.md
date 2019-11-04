@@ -31,3 +31,5 @@
 * Lucas Moraes            - lucascmoraes@gmail.com - 
 * Andrea Sánchez-Tapia    - andreasancheztapia@gmail.com - [GitHub](https://github.com/AndreaSanchezTapia)
 * José Wagner Ribeiro Jr. - jwribeirojunior@gmail.com - [GitHub](https://github.com/Xuletajr)
+
+https://img.shields.io/github/followers/Xuletajr?label=GitHub&style=social
