@@ -96,9 +96,7 @@ hab2 <- hab %>%
 
 hab3 <- bind_rows(hab2)
 
-<<<<<<< HEAD
-######   end----
-=======
+# 
 lf_hab <- lf3 %>% left_join(veg3) %>% left_join(hab3)
 lf_habitat %>%
     head(.)
@@ -107,4 +105,5 @@ lf_hab %>%
 
 # Exportar planilha csv com a forma de vida das árvores modificada
 write.csv(lf_hab, "./ipt/lf_hab_modified.csv", fileEncoding = "UTF-8")
->>>>>>> 51dce94fe0aa4ecef62a2ecf95b7bbb28da3d4a6
+
+######   end----
