@@ -6496,8 +6496,6 @@ id	vernacularName	language	locality
 20852	douradão	PORTUGUES	MG
 130620	Gemedeira	PORTUGUES	Nordeste (Bahia)
 54148	'arataciú preto'	PORTUGUES	Norte/AM
-38579	'caferana'	PORTUGUES	Norte/RR
-38579	'margonçalo de várzea'	PORTUGUES	Norte/PA
 17618	seringarana	PORTUGUES	Norte
 17618	leiteiro-branco	PORTUGUES	Sudeste
 17618	mamoninha	PORTUGUES	Nordeste
@@ -9157,3 +9155,16 @@ id	vernacularName	language	locality
 15698	tucum	PORTUGUES	Sul e Sudeste
 34023	tucunzinho	PORTUGUES	ES
 15701	marajazinho	PORTUGUES	Amazônia
+38581	coloradillo-de-hoje-grande	ESPANHOL	Bolívia
+38581	temarito	ESPANHOL	Venezuela
+38581	mata-pala-duro	ESPANHOL	Venezuela
+38581	bois-bander-rouge	ESPANHOL	Repúplica Dominicana/Antilhas
+38581	bois-bandé	ESPANHOL	República Dominicana/Antilhas
+38581	sylvania	ESPANHOL	República Dominicana/Antilhas
+38581	Santa-Rita	PORTUGUES	Sul do Brasil
+38581	pau-Santa-Rita	PORTUGUES	Sul do Brasil
+38581	margonçalo-da-várzea	PORTUGUES	Pará
+38581	orelha-de-onça	PORTUGUES	Ceará
+38581	bulandi-jaca	PORTUGUES	Pernambuco
+38581	caferana	PORTUGUES	Rondônia
+38581	caferana-da-mata	PORTUGUES	Rondônia

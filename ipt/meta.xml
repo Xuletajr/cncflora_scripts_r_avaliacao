@@ -30,6 +30,14 @@
     <field index="24" term="http://purl.org/dc/terms/bibliographicCitation"/>
     <field index="25" term="http://purl.org/dc/terms/references"/>
   </core>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/SpeciesProfile">
+    <files>
+      <location>speciesprofile.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://rs.gbif.org/terms/1.0/lifeForm"/>
+    <field index="2" term="http://rs.tdwg.org/dwc/terms/habitat"/>
+  </extension>
   <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Reference">
     <files>
       <location>reference.txt</location>
@@ -41,6 +49,24 @@
     <field index="4" term="http://purl.org/dc/terms/creator"/>
     <field index="5" term="http://purl.org/dc/terms/date"/>
     <field index="6" term="http://purl.org/dc/terms/type"/>
+  </extension>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Distribution">
+    <files>
+      <location>distribution.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://rs.tdwg.org/dwc/terms/locationID"/>
+    <field index="2" term="http://rs.tdwg.org/dwc/terms/countryCode"/>
+    <field index="3" term="http://rs.tdwg.org/dwc/terms/establishmentMeans"/>
+    <field index="4" term="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/>
+  </extension>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/ResourceRelationship">
+    <files>
+      <location>resourcerelationship.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://rs.tdwg.org/dwc/terms/relatedResourceID"/>
+    <field index="2" term="http://rs.tdwg.org/dwc/terms/relationshipOfResource"/>
   </extension>
   <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/TypesAndSpecimen">
     <files>
@@ -62,31 +88,5 @@
     <field index="1" term="http://rs.tdwg.org/dwc/terms/vernacularName"/>
     <field index="2" term="http://purl.org/dc/terms/language"/>
     <field index="3" term="http://rs.tdwg.org/dwc/terms/locality"/>
-  </extension>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/ResourceRelationship">
-    <files>
-      <location>resourcerelationship.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://rs.tdwg.org/dwc/terms/relatedResourceID"/>
-    <field index="2" term="http://rs.tdwg.org/dwc/terms/relationshipOfResource"/>
-  </extension>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/SpeciesProfile">
-    <files>
-      <location>speciesprofile.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://rs.gbif.org/terms/1.0/lifeForm"/>
-    <field index="2" term="http://rs.tdwg.org/dwc/terms/habitat"/>
-  </extension>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Distribution">
-    <files>
-      <location>distribution.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://rs.tdwg.org/dwc/terms/locationID"/>
-    <field index="2" term="http://rs.tdwg.org/dwc/terms/countryCode"/>
-    <field index="3" term="http://rs.tdwg.org/dwc/terms/establishmentMeans"/>
-    <field index="4" term="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/>
   </extension>
 </archive>
