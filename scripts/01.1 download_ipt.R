@@ -1,7 +1,6 @@
-####################################################################################################
-   ###                Baixar dados do Projeto Flora do Brasil 2020 (IPT)                      ###
-   ###              e formatar a distribuição e forma de vida das plantas                     ###               
-####################################################################################################
+#######################################################################################################################################
+     ###       Baixar dados do Projeto Flora do Brasil 2020 (IPT)  e formatar a distribuição e forma de vida das plantas       ###        
+#######################################################################################################################################
 
 # Ler pacotes
 library(readr)
@@ -10,9 +9,9 @@ library(tidyr)
 library(stringr)
 library(jsonlite)
 library(downloader)
-source("./functions/change_NA_to_df.R") 
-# Função disponível no GitHub de Andrea S. Tapia:
+# Função change_NA_to_df.R disponível no GitHub de Andrea S. Tapia:
 # https://github.com/AndreaSanchezTapia/CNCFlora_IUCN_LC/blob/master/scripts/change_NA_to_df.R
+source("./functions/change_NA_to_df.R") 
 
 # Baixar dados do Flora do Projeto Flora do Brasil 2020 (IPT)---
 pag <- "http://ipt.jbrj.gov.br/jbrj/archive.do?r=lista_especies_flora_brasil"
@@ -97,4 +96,15 @@ hab2 <- hab %>%
 
 hab3 <- bind_rows(hab2)
 
+<<<<<<< HEAD
 ######   end----
+=======
+lf_hab <- lf3 %>% left_join(veg3) %>% left_join(hab3)
+lf_habitat %>%
+    head(.)
+lf_hab %>%
+    head(.)
+
+# Exportar planilha csv com a forma de vida das árvores modificada
+write.csv(lf_hab, "./ipt/lf_hab_modified.csv", fileEncoding = "UTF-8")
+>>>>>>> 51dce94fe0aa4ecef62a2ecf95b7bbb28da3d4a6
