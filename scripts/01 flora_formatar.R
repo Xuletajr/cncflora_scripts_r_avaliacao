@@ -66,7 +66,9 @@ taxon <- read_tsv("./ipt/taxon.txt", quote = "", trim_ws = T)
 head(taxon)
 
 # Ler informações sobre a taxonomia---
-# Os texte é carregado desconfigurado, mesmo indicando enconding. 
+# Os texte é carregado desconfigurado, mesmo indicando enconding.
+# Esta informação não está sendo utilizada para gerar a tabela com dados do Flora,
+# talvez seja melhor excluir do script e só avisar que tem essa informação que não será utilizada
 relationship <- read_delim("./ipt/resourcerelationship.txt", delim = "\t", 
                            quote = "") %>% distinct()
 
