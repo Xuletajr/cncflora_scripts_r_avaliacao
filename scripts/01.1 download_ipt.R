@@ -9,14 +9,16 @@ library(tidyr)
 library(stringr)
 library(jsonlite)
 library(downloader)
+
 # Função change_NA_to_df.R disponível no GitHub de Andrea S. Tapia:
 # https://github.com/AndreaSanchezTapia/CNCFlora_IUCN_LC/blob/master/scripts/change_NA_to_df.R
 source("./functions/change_NA_to_df.R") 
 
 # Baixar dados do Flora do Projeto Flora do Brasil 2020 (IPT)---
 pag <- "http://ipt.jbrj.gov.br/jbrj/archive.do?r=lista_especies_flora_brasil"
-download(url = pag, destfile = "iptflora", mode = "wb") # Para sistema operacional windows só funciona com mode = "wb"
-unzip("iptflora", exdir = "./ipt") # salvar em pasta "ipt" dentro da pasta de trabalho
+# Para sistema operacional windows só funcionou com mode = "wb". Possivelmente precisará de ajustes para outrs sistemas operacionais. 
+download(url = pag, destfile = "iptflora", mode = "wb") 
+unzip("iptflora", exdir = "./ipt") # descompactar e salvar dentro subpasta "ipt" na pasta principal
 
 # Formatar distribuição das espécies flora---
 distribution  <- read_delim("./ipt/distribution.txt", delim = "\t", quote = "") %>%
@@ -47,6 +49,7 @@ omdf <- bind_rows(occurrenceRemarks_df,.id = "sp")
 head(distribution)
 
 # Distribuição com as observações de ocorrência (occurrenceRemarks) modificadas
+# A coluna "location" tem sigla BR antes dos Estados, talvez fosse melhor excluir esta informação
 distribution_mod <- distribution %>% mutate(occurrenceRemarks = omdf$om_all)
 head(distribution_mod)
 
