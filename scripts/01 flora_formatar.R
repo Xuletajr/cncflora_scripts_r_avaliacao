@@ -66,6 +66,7 @@ taxon <- read_tsv("./ipt/taxon.txt", quote = "", trim_ws = T)
 head(taxon)
 
 # Ler informações sobre a taxonomia---
+# Os texte é carregado desconfigurado, mesmo indicando enconding. 
 relationship <- read_delim("./ipt/resourcerelationship.txt", delim = "\t", 
                            quote = "") %>% distinct()
 
@@ -122,11 +123,10 @@ hab2 <- hab %>%
 hab3 <- bind_rows(hab2)
 
 # 
-lf_mod <- lf3 %>% left_join(veg3) %>% left_join(hab3)
-lf_habitat %>%
-   head(.)
-lf_hab %>%
-   head(.)
+lf_mod <- lf3 %>% left_join(veg3) %>% left_join(hab3) 
+
+lf_habitat %>% head(.)
+lf_mod %>% head(.)
 
 # Exportar planilha csv com a forma de vida das árvores modificada
 write.csv(lf_mod, "./ipt/lf_hab_modified.csv", fileEncoding = "UTF-8")
@@ -157,10 +157,10 @@ gtsearch <- read.csv("./data/global_tree_search_trees_1_3.csv") %>%
 # Está levando ~ 4 minutos para juntar os dados.
 all  <- left_join(taxon, distribution_mod) %>%
    left_join(ref) %>% left_join(lf_mod) %>%
-   left_join(types) %>% left_join(vernacular) %>% 
-   left_join(gtsearch) %>% distinct() %>% 
+   left_join(types) %>% left_join(vernacular) %>% distinct() %>% 
    mutate(nome_especie = purrr::map(scientificName, ~remove.authors(.)) %>%
-                            simplify2array())
+                            simplify2array()) %>% 
+   left_join(gtsearch)
 
 # Exportar planilha csv com todos os dados da flora do brasil + GTS juntos
 write.csv(all, "./ipt/all_flora.csv", fileEncoding = "UTF-8")
