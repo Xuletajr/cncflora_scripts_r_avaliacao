@@ -1,18 +1,64 @@
-#####################################################################################################
-          ### Baixar, formatar e exportar do projeto Flora do Brasil 2020 (FB - IPT) ###        
-#####################################################################################################
+######################################################################################################
+   ###         Baixar, formatar e exportar dados do Projeto Flora do Brasil 2020 (IPT)          ###        
+######################################################################################################
 
 # Ler pacotes
 library(dplyr)
 library(flora)
 library(readr)
 library(purrr)
+library(tidyr)
+library(stringr)
+library(jsonlite)
+library(downloader)
 
-# Ler a distribução formatada (gerada pelo script "01.1 download_ipt")---
-distribution <- read_csv("./ipt/distribution_modified.csv") %>%
-   dplyr::select(-1) # Já pode ser gerado com "row.names = FALSE"
+# Função change_NA_to_df.R disponível no GitHub de Andrea S. Tapia:
+# https://github.com/AndreaSanchezTapia/CNCFlora_IUCN_LC/blob/master/scripts/change_NA_to_df.R
+source("./functions/change_NA_to_df.R") 
+
+# Baixar dados do Flora do Projeto Flora do Brasil 2020 (IPT)---
+pag <- "http://ipt.jbrj.gov.br/jbrj/archive.do?r=lista_especies_flora_brasil"
+# Para sistema operacional windows só funcionou com mode = "wb". Possivelmente precisará de ajustes para outrs sistemas operacionais. 
+download(url = pag, destfile = "iptflora", mode = "wb") 
+unzip("iptflora", exdir = "./ipt") # descompactar e salvar dentro subpasta "ipt" na pasta principal
+
+# Formatar distribuição das espécies flora---
+distribution  <- read_delim("./ipt/distribution.txt", delim = "\t", quote = "") %>%
+   dplyr::group_by(id) %>%
+   dplyr::mutate(location = paste(locationID, collapse = "-")) %>%
+   dplyr::select(-locationID) %>% distinct() %>% ungroup()
+
+names(distribution)
+
+ocurrence_remarks <- distribution %>%
+   dplyr::select(occurrenceRemarks) %>%
+   data.frame() %>%
+   dplyr::mutate(occurrenceRemarks = as.character(occurrenceRemarks))
+
+head(ocurrence_remarks)
+
+occurrenceRemarks_df <- purrr::map(ocurrence_remarks$occurrenceRemarks, 
+                                   ~data.frame(jsonlite::fromJSON(.))) %>%
+   purrr::map(., ~ mutate(., om = paste(.$endemism, .$phytogeographicDomain,
+                                        sep = "/"))) %>%
+   purrr::map( ~ mutate(., om_all = paste(om, collapse = "-"))) %>%
+   purrr::map( ~ dplyr::select(., om_all)) %>%
+   purrr::map( ~ distinct(.)) %>%
+   purrr::map(., .f = ~change_others_to_dataframe(.))
+
+omdf <- bind_rows(occurrenceRemarks_df,.id = "sp")
 
 head(distribution)
+
+# Distribuição com as observações de ocorrência (occurrenceRemarks) modificadas
+# A coluna "location" tem sigla BR antes dos Estados, talvez fosse melhor excluir esta informação
+distribution_mod <- distribution %>% mutate(occurrenceRemarks = omdf$om_all)
+
+head(distribution_mod)
+
+# Exportar planilha csv com a distribuição modificada
+write.csv(distribution_mod, "./ipt/distribution_modified.csv", 
+          fileEncoding = "UTF-8")
 
 # Ler informações taxon---
 taxon <- read_tsv("./ipt/taxon.txt", quote = "", trim_ws = T)
@@ -63,7 +109,7 @@ gtsearch <- read.csv("./data/global_tree_search_trees_1_3.csv") %>%
 
 # Juntar todas as informações do projeto Flora do Brasil 2020 em uma única planilha com Global Tree Search 
 # Está levando ~ 4 minutos para juntar os dados.
-all  <- left_join(taxon, distribution) %>%
+all  <- left_join(taxon, distribution_mod) %>%
    left_join(ref) %>% left_join(lf_mod) %>%
    left_join(types) %>% left_join(vernacular) %>% 
    left_join(gtsearch) %>% distinct() %>% 
