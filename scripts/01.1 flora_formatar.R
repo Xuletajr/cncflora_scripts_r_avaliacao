@@ -54,3 +54,23 @@ vernacular <- read_delim("./ipt/vernacularname.txt", delim = "\t") %>%
    dplyr::select(-vernacular) %>% distinct()
 
 names(vernacular)
+
+# Ler planilha do Global Tree Search
+gtsearch <- read.csv("./data/global_tree_search_trees_1_3.csv") %>%
+   mutate(GTSearch = "sim") %>% 
+   rename(nome_especie = Taxon.name) %>% 
+   select(nome_especie, GTSearch)
+
+# Juntar todas as informações do projeto Flora do Brasil 2020 em uma única planilha com Global Tree Search 
+# Está levando ~ 4 minutos para juntar os dados.
+all  <- left_join(taxon, distribution) %>%
+   left_join(ref) %>% left_join(lf_mod) %>%
+   left_join(types) %>% left_join(vernacular) %>% 
+   left_join(gtsearch) %>% distinct() %>% 
+   mutate(nome_especie = purrr::map(scientificName, ~remove.authors(.)) %>%
+                            simplify2array())
+
+# Exportar planilha csv com todos os dados da flora do brasil + GTS juntos
+write.csv(all, "./ipt/all_flora.csv", fileEncoding = "UTF-8")
+
+######   end----
