@@ -18,11 +18,7 @@
 
   01. Baixar e formatar dados **Flora do Brasil 2020** (**FB202**; **IPT**)
   02. Cruzar inforamações **FB2020**
-  03. Baixar, organizar e juntar dados do **GBIF**, **speciesLink** e **REFLORA**
-    03.1. Baixar dados speciesLink
-    03.2. Baixar dados GBIF
-    03.3. Baixar dados Reflora
-    03.4. Juntar e limpeza de registros 
+  03. Baixar, organizar, juntar e limpar dados do **GBIF**, **speciesLink** e **REFLORA**  
   04. Limpezas espaciais e adicionar centróides dos municípios nas coordenadas
   05. Estimando **EOO** e **AOO** 
   06. Buscando uso das espécies (fonte: *Useful Tropical Plants Database*)
