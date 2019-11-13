@@ -69,14 +69,14 @@ treespp3 <- treespp2_nodupl %>%
    dplyr::mutate(final_name = ifelse(is.na(taxonID), original_name, final_name)) %>%
    # Mesma coisa para família.
    dplyr::mutate(final_family = if_else(!is.na(family), family, Familia)) %>%
-   #new column notes
+   # Nova coluna com notas sobre taxon
    dplyr::mutate(notes = if_else(is.na(taxonID), "not found", "LFB")) %>%
    # Nova coluna mostrando se o nome está ok ou é sinônimo. 
    dplyr::mutate(tax_notes = if_else(taxonomicStatus == "NOME_ACEITO" & nomenclaturalStatus == "NOME_CORRETO", "name ok", "")) %>%
    dplyr::mutate(tax_notes = if_else(taxonomicStatus == "SINONIMO", "synonym", tax_notes)) %>%
    dplyr::mutate(tax_notes = if_else(is.na(taxonomicStatus), nomenclaturalStatus, tax_notes)) %>%
    dplyr::mutate(notes_fam = if_else(final_family != Familia, "family changed", "")) %>%
-   # 
+   #  Renomear algumas colunas. Selecionar colunas que ficarão.
    dplyr::rename(original_family = Familia,
       name_in_Flora = scientificName,
       original_ID = taxonID,
