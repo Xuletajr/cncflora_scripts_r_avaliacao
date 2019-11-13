@@ -2,7 +2,7 @@
          xmlns:dc="http://purl.org/dc/terms/"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
-         packageId="aacd816d-662c-49d2-ad1a-97e66e2a2908/v393.209" system="http://gbif.org" scope="system"
+         packageId="aacd816d-662c-49d2-ad1a-97e66e2a2908/v393.211" system="http://gbif.org" scope="system"
          xml:lang="eng">
 
 <dataset>
@@ -46,7 +46,7 @@
     <onlineUrl>http://floradobrasil.jbrj.gov.br</onlineUrl>
       </metadataProvider>
   <pubDate>
-      2019-10-30
+      2019-11-13
   </pubDate>
   <language>por</language>
   <abstract>
@@ -112,7 +112,7 @@ To date (2018-02-06), 46485 species are recognized for Brazil&apos;s flora: 4754
       <gbif>
           <dateStamp>2014-04-16T02:42:50.854-03:00</dateStamp>
           <hierarchyLevel>dataset</hierarchyLevel>
-            <citation identifier="doi:10.15468/1mtkaw">Brazil Flora G (2019): Brazilian Flora 2020 project - Projeto Flora do Brasil 2020. v393.209. Instituto de Pesquisas Jardim Botanico do Rio de Janeiro. Dataset/Checklist. doi:10.15468/1mtkaw</citation>
+            <citation identifier="doi:10.15468/1mtkaw">Brazil Flora G (2019): Brazilian Flora 2020 project - Projeto Flora do Brasil 2020. v393.211. Instituto de Pesquisas Jardim Botanico do Rio de Janeiro. Dataset/Checklist. doi:10.15468/1mtkaw</citation>
           <bibliography>
                 <citation identifier="http://reflora.jbrj.gov.br/downloads/vol1.pdf">FORZZA, R. C., BAUMGRATZ, J. F., Bicudo, C.E.M., CARVALHO JUNIOR, A., COSTA, Andréa, COSTA, D. P., HOPKINS, M. J. G., LEITMAN, P., LOHMANN, L. G., MAIA, L. C., MARTINELLI, G., MENEZES, M., Morim, M. P., COELHO, M. N., PEIXOTO, A. L., PIRANI, J. R., PRADO, J., Queiroz, L.P., Souza, V. C., STEHMANN, J., SYLVESTRE, Lana, Walter, B.M.T., ZAPPI, D. Catálogo das Plantas e Fungos do Brasil. Rio de Janeiro : Andrea Jakobsson Estúdio &amp; Jardim Botânico do Rio de Janeiro, 2010, v. 1 e 2. p.1699.</citation>
                 <citation identifier="http://reflora.jbrj.gov.br/downloads/FUNG1.pdf">Forzza, Rafaela C., Baumgratz, José Fernando A., Bicudo, Carlos Eduardo M., Canhos, Dora A. L., Carvalho, Anibal A., Coelho, Marcus A. Nadruz, Costa, Andrea F., Costa, Denise P., Hopkins, Michael G., Leitman, Paula M., Lohmann, Lucia G., Lughadha, Eimear Nic, Maia, Leonor Costa, Martinelli, Gustavo, Menezes, Mariângela, Morim, Marli Pires, Peixoto, Ariane Luna, Pirani, José R., Prado, Jefferson, Queiroz, Luciano P., Souza, Sidnei, Souza, Vinicius Castro, Stehmann, João R., Sylvestre, Lana S., Walter, Bruno M. T., Zappi, Daniela C. New Brazilian Floristic List Highlights Conservation Challenges. Bioscience (Washington. Print). , v.62, p.39 - 45, 2012.</citation>
@@ -123,7 +123,7 @@ To date (2018-02-06), 46485 species are recognized for Brazil&apos;s flora: 4754
                 <citation identifier="http://ckan.jbrj.gov.br/dataset/floradobrasil">PRADO, J. et al. Diversity of ferns and lycophytes in Brazil. Rodriguésia, v. 66, n. 4, 2015. (DOI: 10.1590 / 2175-7860201566410)</citation>
           </bibliography>
           <resourceLogoUrl>http://ipt.jbrj.gov.br/jbrj/logo.do?r=lista_especies_flora_brasil</resourceLogoUrl>
-          <dc:replaces>aacd816d-662c-49d2-ad1a-97e66e2a2908/v393.209.xml</dc:replaces>
+          <dc:replaces>aacd816d-662c-49d2-ad1a-97e66e2a2908/v393.211.xml</dc:replaces>
       </gbif>
     </metadata>
   </additionalMetadata>

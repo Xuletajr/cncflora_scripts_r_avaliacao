@@ -19,12 +19,12 @@ head(flora)
 # e uma coluna "Familia" com as famílias das espécies. Colocar a planilha com spp recorte dentro da pasta "data".
 treespp <- read_csv("./data/avaliacoes2019_Bloco3.csv") %>%
    dplyr::select(-1) %>%
-   # Função do pacote "flora" que retira autoria do nome científico das espécies. Para manter padronização seria importante
-   # sempre que entrar uma planilha a coluna com o binômio das espécies ser gerada com essa função. 
+   # Função do pacote "flora" para remover autoria do nome científico das espécies. Para manter padronização seria importante
+   # sempre que entrar uma planilha a coluna com o binômio das espécies ser gerada com essa função.
    dplyr::mutate(nome_especie = purrr::map(scientificName, ~remove.authors(.)) %>%
              simplify2array())
 
-# Juntar spp do recorte com informações do FB2020 e selecionar colunas que serão mantidas.
+# Juntar spp do recorte com informações do FB2020 e selecionar colunas que serão mantidas.----
 treespp2 <- treespp %>%
    dplyr::select(Familia, scientificName, nome_especie) %>%
    dplyr::rename(original_name = scientificName) %>%
@@ -60,6 +60,7 @@ treespp2_nodupl %>% dplyr::count(is.na(acceptedNameUsage), taxonomicStatus, nome
 spp_nome_mal_aplicado <- treespp2 %>%
    dplyr::filter(nomenclaturalStatus %in% c("NOME_MAL_APLICADO", "NOME_NAO_VALIDAMENTE_PUBLICADO"))
 
+# Verificar e adicionar informações sobre a taxonomia das spp.---- 
 # Se o nome da sp está correto: "scientificName" - se não aceito deve incluir sinônimos.
 treespp3 <- treespp2_nodupl %>%
    dplyr::mutate(final_name = ifelse(is.na(acceptedNameUsage), scientificName, acceptedNameUsage)) %>%
@@ -85,3 +86,34 @@ treespp3 <- treespp2_nodupl %>%
    dplyr::select(original_family, original_name, name_in_Flora,original_ID,
                  final_family, scientificName, taxonID,
                  vernacular_names, notes, tax_notes, notes_fam)
+
+# Remover o nome dos autores do nome científico da espécie. Essa coluna será usada para unir as tabelas.
+treespp3 <- treespp3 %>%
+   # Esse coluna precisou ser refeita porque o nome científico pode ter mudado no ifelse acima. 
+   dplyr::mutate(nome_especie = purrr::map(scientificName, ~remove.authors(.)) %>%
+             simplify2array())
+
+# Exportar a planilha gerak das espécies com informações do Flora do Brasil 2020-IPT
+write.csv(treespp3, "./results/names_flora1.csv", fileEncoding = "UTF-8")
+
+# Checar se todos os acceptednameusage são NAs
+(treespp4 <- treespp3 %>%
+   dplyr::left_join(flora) %>% 
+   dplyr::select(acceptedNameUsage) %>% 
+   # Se todos os acceptednameusage são NA! Bom.
+   dplyr::count(is.na(acceptedNameUsage))) 
+
+# Juntar novamente com planilha do FB2020
+treespp4 <- treespp3 %>%
+   dplyr::left_join(flora) %>% 
+   dplyr::arrange(final_family, nome_especie)
+
+# Selecionar as colunas que ficarão na planilha que será exportada
+treespp4 <- treespp3 %>%
+   left_join(flora) %>% 
+   dplyr::select(original_family, original_name, name_in_Flora, original_ID, final_family, 
+                 scientificName, taxonID, vernacular_names, notes, tax_notes,
+                 notes_fam, nome_especie, establishmentMeans, occurrenceRemarks, location,
+                 lifeForm, vegetationType, habitat)
+                 
+                  55) 

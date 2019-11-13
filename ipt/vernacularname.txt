@@ -4843,8 +4843,6 @@ id	vernacularName	language	locality
 86133	peito-de-moça	PORTUGUES	Pará e Amapá
 86198	muirapuama	PORTUGUES	Amazonas
 86374	maracujá-bravo	PORTUGUES	Acre
-86377	maracujá-azedo	PORTUGUES	Santa Catarina, Paraná
-86377	maracujá-de-suco	PORTUGUES	Santa Catarina, Paraná, Rio Grande do Sul
 86514	caa-piranga	PORTUGUES	Pará
 86517	uaiastic	PORTUGUES	Norte
 86517	uaimo-astic	PORTUGUES	Norte
@@ -9168,3 +9166,12 @@ id	vernacularName	language	locality
 38581	bulandi-jaca	PORTUGUES	Pernambuco
 38581	caferana	PORTUGUES	Rondônia
 38581	caferana-da-mata	PORTUGUES	Rondônia
+34035	caiué	PORTUGUES	AM
+22174	bacaba-açu	PORTUGUES	Amazônia
+606597	antúrio-aspero	PORTUGUES	Sudeste
+606598	antúrio-da-nervura-vermelha	PORTUGUES	Sudeste
+10388	Cagaita	PORTUGUES	
+10388	Cagaiteira	PORTUGUES	
+10560	pitanga	PORTUGUES	
+606610	chichuá	PORTUGUES	Norte
+606611	Queiroz, R.T.	PORTUGUES	

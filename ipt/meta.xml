@@ -30,26 +30,6 @@
     <field index="24" term="http://purl.org/dc/terms/bibliographicCitation"/>
     <field index="25" term="http://purl.org/dc/terms/references"/>
   </core>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/SpeciesProfile">
-    <files>
-      <location>speciesprofile.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://rs.gbif.org/terms/1.0/lifeForm"/>
-    <field index="2" term="http://rs.tdwg.org/dwc/terms/habitat"/>
-  </extension>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Reference">
-    <files>
-      <location>reference.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://purl.org/dc/terms/identifier"/>
-    <field index="2" term="http://purl.org/dc/terms/bibliographicCitation"/>
-    <field index="3" term="http://purl.org/dc/terms/title"/>
-    <field index="4" term="http://purl.org/dc/terms/creator"/>
-    <field index="5" term="http://purl.org/dc/terms/date"/>
-    <field index="6" term="http://purl.org/dc/terms/type"/>
-  </extension>
   <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Distribution">
     <files>
       <location>distribution.txt</location>
@@ -68,6 +48,35 @@
     <field index="1" term="http://rs.tdwg.org/dwc/terms/relatedResourceID"/>
     <field index="2" term="http://rs.tdwg.org/dwc/terms/relationshipOfResource"/>
   </extension>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Reference">
+    <files>
+      <location>reference.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://purl.org/dc/terms/identifier"/>
+    <field index="2" term="http://purl.org/dc/terms/bibliographicCitation"/>
+    <field index="3" term="http://purl.org/dc/terms/title"/>
+    <field index="4" term="http://purl.org/dc/terms/creator"/>
+    <field index="5" term="http://purl.org/dc/terms/date"/>
+    <field index="6" term="http://purl.org/dc/terms/type"/>
+  </extension>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/SpeciesProfile">
+    <files>
+      <location>speciesprofile.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://rs.gbif.org/terms/1.0/lifeForm"/>
+    <field index="2" term="http://rs.tdwg.org/dwc/terms/habitat"/>
+  </extension>
+  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/VernacularName">
+    <files>
+      <location>vernacularname.txt</location>
+    </files>
+    <coreid index="0" />
+    <field index="1" term="http://rs.tdwg.org/dwc/terms/vernacularName"/>
+    <field index="2" term="http://purl.org/dc/terms/language"/>
+    <field index="3" term="http://rs.tdwg.org/dwc/terms/locality"/>
+  </extension>
   <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/TypesAndSpecimen">
     <files>
       <location>typesandspecimen.txt</location>
@@ -79,14 +88,5 @@
     <field index="4" term="http://rs.tdwg.org/dwc/terms/locality"/>
     <field index="5" term="http://rs.tdwg.org/dwc/terms/recordedBy"/>
     <field index="6" term="http://purl.org/dc/terms/source"/>
-  </extension>
-  <extension encoding="UTF-8" fieldsTerminatedBy="\t" linesTerminatedBy="\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/VernacularName">
-    <files>
-      <location>vernacularname.txt</location>
-    </files>
-    <coreid index="0" />
-    <field index="1" term="http://rs.tdwg.org/dwc/terms/vernacularName"/>
-    <field index="2" term="http://purl.org/dc/terms/language"/>
-    <field index="3" term="http://rs.tdwg.org/dwc/terms/locality"/>
   </extension>
 </archive>
