@@ -1,0 +1,509 @@
+,family,scientificName,taxonID
+1,Annonaceae,Ephedranthus pisocarpus R.E.Fr.,110367
+2,Annonaceae,Unonopsis renatoi Maas & Westra,110548
+2,Apocynaceae,Aspidosperma camporum Müll.Arg.,4522
+3,Apocynaceae,Aspidosperma dispermum Müll.Arg.,25124
+4,Apocynaceae,Aspidosperma illustre (Vell.) Kuhlm. & Pirajá,4527
+5,Apocynaceae,Aspidosperma thomasii Marc.-Ferr.,4536
+6,Apocynaceae,Lacmellea bahiensis J.F.Morales,4634
+7,Apocynaceae,Lacmellea pauciflora (Kuhlm.) Markgr.,4635
+8,Apocynaceae,Rauvolfia atlantica Emygdio,4840
+9,Apocynaceae,Rauvolfia capixabae I.Koch & Kin.-Gouv.,4842
+10,Apocynaceae,Rauvolfia pruinosifolia I.Koch & Kin.-Gouv.,4846
+11,Aquifoliaceae,Ilex cerasifolia Reissek,4885
+12,Aquifoliaceae,Ilex euryaeformis Reissek,4890
+13,Aquifoliaceae,Ilex floribunda Reissek ex Maxim.,4891
+14,Aquifoliaceae,Ilex lundii Warm.,4899
+15,Aquifoliaceae,Ilex sapotifolia Reissek,4907
+16,Aquifoliaceae,Ilex velutina Reissek,15618
+17,Araliaceae,Dendropanax brasiliensis (Seem.) Frodin,5103
+18,Araliaceae,Dendropanax denticulatus Fiaschi,5106
+19,Araliaceae,Dendropanax nebulosus Fiaschi & Jung-Mend.,5111
+20,Araliaceae,Schefflera burchellii (Seem.) Frodin & Fiaschi,15658
+21,Araliaceae,Schefflera longipetiolata (Pohl ex DC.) Frodin & Fiaschi,5141
+22,Araliaceae,Schefflera selloi (Marchal) Frodin & Fiaschi,5144
+23,Asteraceae,Acritopappus prunifolius R.M.King & H.Rob.,15927
+24,Asteraceae,Lychnophora rupestris Semir,133793
+25,Asteraceae,Lychnophora staavioides Mart.,27256
+26,Asteraceae,Piptocarpha axillaris (Less.) Baker,5474
+27,Asteraceae,Piptocarpha densifolia Dusén ex G. Lom. Sm.,5476
+28,Asteraceae,Piptocarpha organensis Cabrera,5483
+29,Boraginaceae,Cordia aberrans I.M.Johnst.,16503
+30,Boraginaceae,Cordia anabaptista Cham.,16504
+31,Burseraceae,Protium widgrenii Engl.,6602
+32,Canellaceae,Cinnamodendron axillare Endl. ex Walp.,6651
+33,Celastraceae,Monteverdia ardisiifolia (Reissek) Biral,604477
+34,Celastraceae,Monteverdia cestrifolia (Reissek) Biral,604520
+35,Celastraceae,Monteverdia glaucescens (Reissek) Biral,604604
+36,Celastraceae,Monteverdia littoralis (R.M. Carvalho-Okano) Biral,605287
+37,Celastraceae,Monteverdia macrophylla (Mart.) Biral,605270
+38,Celastraceae,Monteverdia rigida (Mart.) Biral,604679
+39,Chrysobalanaceae,Couepia venosa Prance,34664
+40,Chrysobalanaceae,Licania nitida Hook.f.,16846
+41,Clusiaceae,Clusia dardanoi G.Mariz & Maguire,6833
+42,Combretaceae,Terminalia eichleriana Alwan & Stace,16897
+43,Combretaceae,Terminalia mameluco Pickel,6920
+44,Combretaceae,Terminalia phaeocarpa Eichler,28350
+45,Connaraceae,Connarus detersus Planch.,6950
+46,Connaraceae,Connarus nodosus Baker,6952
+47,Dichapetalaceae,Stephanopodium blanchetianum Baill.,7327
+48,Dichapetalaceae,Tapura lanceolata (Ducke) Rizzini,82237
+49,Ebenaceae,Diospyros akaraiensis A.C.Sm.,82303
+50,Ebenaceae,Diospyros brasiliensis Mart. ex Miq.,7432
+51,Ebenaceae,Diospyros bullata A.C.Sm.,82305
+52,Ebenaceae,Diospyros coccolobifolia Mart. ex Miq.,17311
+53,Ebenaceae,Diospyros santaremnensis Sandwith,82324
+54,Ericaceae,Agarista glaberrima (Sleumer) Judd,25444
+55,Ericaceae,Agarista revoluta (Spreng.) J.D. Hook. ex Nied.,7467
+56,Ericaceae,Gaylussacia salicifolia Sleumer,7503
+57,Erythroxylaceae,Erythroxylum affine A.St.-Hil.,7681
+58,Erythroxylaceae,Erythroxylum andrei Plowman,7684
+59,Erythroxylaceae,Erythroxylum columbinum Mart.,7691
+60,Erythroxylaceae,Erythroxylum frangulifolium A.St.-Hil.,7701
+61,Erythroxylaceae,Erythroxylum grandifolium Peyr.,17421
+62,Erythroxylaceae,Erythroxylum hamigerum O.E.Schulz,7705
+63,Erythroxylaceae,Erythroxylum macrocalyx Mart.,7709
+64,Erythroxylaceae,Erythroxylum nobile O.E.Schulz,7719
+65,Erythroxylaceae,Erythroxylum ochranthum Mart.,7721
+66,Erythroxylaceae,Erythroxylum polygonoides Mart.,17428
+67,Erythroxylaceae,Erythroxylum splendidum Plowman,7731
+68,Euphorbiaceae,"Actinostemon roselii L. Oliveira, A.L. Melo & M.F. Sales",603401
+69,Euphorbiaceae,Algernonia brasiliensis Baill.,35658
+70,Euphorbiaceae,Algernonia riedelii (Müll.Arg.) G.L.Webster,35667
+71,Euphorbiaceae,Croton alchorneicarpus Croizat,35760
+72,Euphorbiaceae,Croton hemiargyreus Müll.Arg.,17518
+73,Euphorbiaceae,Croton sacaquinha Croizat,35921
+74,Euphorbiaceae,Croton vulnerarius Baill.,35971
+75,Euphorbiaceae,Gymnanthes gaudichaudii Müll. Arg.,25530
+76,Euphorbiaceae,Joannesia heveoides Ducke,36120
+77,Euphorbiaceae,Mabea glaziovii Pax & K.Hoffm.,17588
+78,Euphorbiaceae,Sapium sellowianum (Müll.Arg.) Huber,17666
+79,Euphorbiaceae,Sebastiania jacobinensis (Müll.Arg.) Müll.Arg.,17677
+80,Euphorbiaceae,Stillingia loranthacea (Müll. Arg.) Pax,130757
+81,Euphorbiaceae,Stillingia oppositifolia Baill. ex Müll.Arg.,36246
+82,Euphorbiaceae,Tetrorchidium parvulum Müll. Arg.,25576
+83,Fabaceae,Abarema campestris (Spruce ex Benth.) Barneby & J.W.Grimes,82545
+84,Fabaceae,Abarema langsdorffii (Benth.) Barneby & J.W.Grimes,17978
+85,Fabaceae,Abarema villosa Iganci & M.P.Morim,100917
+86,Fabaceae,Acosmium lentiscifolium Schott,29405
+87,Fabaceae,Bauhinia bombaciflora Ducke,78513
+88,Fabaceae,Bauhinia grandifolia (Bong.) Steud.,82669
+89,Fabaceae,Bauhinia longipedicellata Ducke,78523
+90,Fabaceae,Bauhinia ovata (Bong.) Vogel,100878
+91,Fabaceae,Chamaecrista aspleniifolia (H.S.Irwin & Barneby) H.S.Irwin & Barneby,18297
+92,Fabaceae,Chamaecrista blanchetii (Benth.) Conc. et al.,105505
+93,Fabaceae,Chamaecrista brachystachya (Benth.) Conc. et al.,105506
+94,Fabaceae,Chamaecrista confertiformis (H.S.Irwin & Barneby) Conc. et al.,105462
+95,Fabaceae,Chamaecrista decora (H.S.Irwin & Barneby) Conc. et al.,105507
+96,Fabaceae,Chamaecrista duartei (H.S.Irwin) H.S.Irwin & Barneby,18335
+97,Fabaceae,Chamaecrista hedysaroides (Vogel) H.S.Irwin & Barneby,27965
+98,Fabaceae,Copaifera sabulicola J.Costa & L.P.Queiroz,115212
+99,Fabaceae,Dalbergia acuta Benth.,29591
+100,Fabaceae,Dalbergia decipularis Rizzini & A.Mattos,29594
+101,Fabaceae,Dalbergia glaucescens (Mart. ex Benth.) Benth.,29601
+102,Fabaceae,Erythrina speciosa Andrews,29677
+103,Fabaceae,Exostyles venusta Schott,18577
+104,Fabaceae,Hymenaea altissima Ducke,78708
+105,Fabaceae,Hymenaea aurea Y.T.Lee & Langenh.,83196
+106,Fabaceae,"Hymenaea fariana R.D. Ribeiro, D.B.O.S. Cardoso & H.C. Lima",582263
+107,Fabaceae,"Hymenaea longifolia (Benth.) I.M.Souza, Funch & L.P.Queiroz",132728
+108,Fabaceae,Hymenolobium alagoanum Ducke,79076
+109,Fabaceae,Inga congesta T.D.Penn.,18647
+110,Fabaceae,Inga schinifolia Benth.,100938
+111,Fabaceae,Leptolobium bijugum (Spreng.) Vogel,101101
+112,Fabaceae,Leptolobium brachystachyum (Benth.) Sch.Rodr. & A.M.G.Azevedo,101102
+113,Fabaceae,"Luetzelburgia purpurea D.B.O.S.Cardoso, L.P.Queiroz & H.C.Lima",101464
+114,Fabaceae,Machaerium incorruptibile (Vell.) Benth.,29769
+115,Fabaceae,Machaerium ovalifolium Glaz. ex Rudd,29777
+116,Fabaceae,Macrolobium brevense Ducke,78723
+117,Fabaceae,Macrolobium latifolium Vogel,18741
+118,Fabaceae,Macrolobium rigidum R.S.Cowan,83364
+119,Fabaceae,Mimosa adenotricha Benth.,31053
+120,Fabaceae,Mimosa dichroa Barneby ex G.P.Lewis,18788
+121,Fabaceae,Mimosa laticifera Rizzini & A.Mattos,78913
+122,Fabaceae,Mimosa pteridifolia Benth.,78926
+123,Fabaceae,Mimosa schomburgkii Benth.,83459
+124,Fabaceae,Mimosa sericantha Benth.,18861
+125,Fabaceae,Mora paraensis (Ducke) Ducke,83485
+126,Fabaceae,Ormosia minor Vogel,101158
+127,Fabaceae,Parapiptadenia blanchetii (Benth.) Vaz & M.P.Lima,18917
+128,Fabaceae,Piptadenia macradenia Benth.,31390
+129,Fabaceae,Poecilanthe grandiflora Benth.,18981
+130,Fabaceae,Poecilanthe itapuana G.P.Lewis,79139
+131,Fabaceae,Pterodon apparicioi Pedersoli,109402
+132,Fabaceae,"Senegalia harleyi Seigler, Ebinger, & P.G. Ribeiro",133903
+133,Fabaceae,Senegalia piauhiensis (Benth.) Seigler & Ebinger,103285
+134,Fabaceae,Senna reniformis (G.Don) H.S.Irwin & Barneby,28221
+135,Fabaceae,Staminodianthus rosae (H.C.Lima) D.B.O.S.Cardoso & H.C.Lima,130131
+136,Fabaceae,Swartzia arumateuana (R. S. Cowan) Torke & Mansano,130715
+137,Fabaceae,Swartzia corrugata Benth.,83770
+138,Fabaceae,Swartzia longistipitata Ducke,78806
+139,Fabaceae,Swartzia oblata R.S.Cowan,101174
+140,Fabaceae,Swartzia parvipetala (R.S.Cowan) Mansano,102308
+141,Fabaceae,Swartzia pilulifera Benth.,29896
+142,Fabaceae,Swartzia polita (R.S.Cowan) Torke,101175
+143,Fabaceae,Swartzia psilonema Harms,102482
+144,Fabaceae,Tachigali goeldiana (Huber) L.G.Silva & H.C.Lima,106816
+145,Fabaceae,Tachigali rubiginosa (Mart. ex Tul.) Oliveira-Filho,106844
+146,Gentianaceae,Macrocarpaea glaziovii Gilg,7771
+147,Humiriaceae,Humiriastrum mussungense Cuatrec.,7979
+148,Humiriaceae,Vantanea bahiaensis Cuatrec.,7986
+149,Hypericaceae,Vismia atlantica L. Marinho & M.V. Martins,583085
+150,Hypericaceae,Vismia cauliflora A.C.Sm.,84116
+151,Hypericaceae,Vismia magnoliifolia Cham. & Schltdl.,8014
+152,Hypericaceae,Vismia micrantha A.St.-Hil.,8016
+153,Lacistemataceae,Lacistema serrulatum Mart.,8101
+154,Lamiaceae,Cyanocephalus lippioides (Pohl ex Benth.) Harley & J.F.B.Pastore,132588
+155,Lamiaceae,Vitex mexiae Moldenke,8369
+156,Lamiaceae,Vitex spongiocarpa Ducke,59859
+157,Lauraceae,Aniba viridis Mez,123035
+158,Lauraceae,Beilschmiedia emarginata (Meisn.) Kosterm.,8387
+159,Lauraceae,Beilschmiedia taubertiana (Schwacke & Mez) Kosterm.,8392
+160,Lauraceae,Cinnamomum glaziovii (Mez) Kosterm.,8396
+161,Lauraceae,Cryptocarya micrantha Meisn.,8407
+162,Lauraceae,Cryptocarya riedeliana P.L.R.Moraes,8409
+163,Lauraceae,Endlicheria glomerata Mez,8416
+164,Lauraceae,Nectandra leucantha Nees,8430
+165,Lauraceae,Ocotea arenicola L.C.S. Assis e Mello-Silva,123015
+166,Lauraceae,Ocotea argentea Mez,8443
+167,Lauraceae,Ocotea insignis Mez,8501
+168,Lauraceae,Ocotea kostermanniana Vattimo-Gil,8464
+169,Lauraceae,Ocotea microbotrys (Meisn.) Mez,8503
+170,Lauraceae,Ocotea montana (Meisn.) Mez,8472
+171,Lauraceae,Ocotea oppositifolia S.Yasuda,25619
+172,Lauraceae,Ocotea pluridomatiata A.Quinet,8506
+173,Lauraceae,Ocotea pulchra Vattimo-Gil,8481
+174,Lauraceae,Ocotea teleiandra (Meisn.) Mez,8510
+175,Lauraceae,Ocotea tenuiflora (Nees) Mez,8488
+176,Lauraceae,Ocotea urbaniana Mez,8490
+177,Lauraceae,Ocotea venulosa (Nees) Baitello,122881
+178,Lauraceae,Ocotea villosa Kosterm.,8494
+179,Lauraceae,Persea alba Nees & Mart.,8512
+180,Lauraceae,Persea aurata Miq.,8513
+181,Lauraceae,Persea caesia Meisn.,8514
+182,Malpighiaceae,Byrsonima myricifolia Griseb.,8840
+183,Malpighiaceae,Byrsonima nitidifolia A.Juss.,25707
+184,Malpighiaceae,Byrsonima perseifolia Griseb.,8844
+185,Malpighiaceae,Heteropterys sincorensis W.R. Anderson,19459
+186,Malpighiaceae,Ptilochaeta glabra Nied.,30504
+187,Malvaceae,Ceiba crispiflora (Kunth) Ravenna,9033
+188,Malvaceae,Ceiba glaziovii (Kuntze) K.Schum.,9035
+189,Malvaceae,Eriotheca pentaphylla (Vell. & K.Schum.) A.Robyns,9053
+190,Malvaceae,Helicteres macropetala A.St.-Hil.,9071
+191,Malvaceae,Mollia burchellii Sprague,32934
+192,Malvaceae,Pavonia calyculosa A.St.-Hil. & Naudin,9123
+193,Malvaceae,Pavonia makoyana E.Morren,9155
+194,Malvaceae,Pseudobombax petropolitanum A.Robyns,603542
+195,Malvaceae,Pterygota brasiliensis Allemão,9198
+196,Malvaceae,Quararibea ochrocalyx (K.Schum.) Vischer,23579
+197,Melastomataceae,Behuria insignis Cham.,9405
+198,Melastomataceae,Huberia consimilis Baumgratz,9481
+199,Melastomataceae,Huberia glazioviana Cogn.,9483
+200,Melastomataceae,Lavoisiera nervulosa Naudin,19630
+201,Melastomataceae,Leandra cogniauxii (D'El Rei Souza) Reginato,605478
+202,Melastomataceae,Leandra fallacissima Markgr.,9537
+203,Melastomataceae,Leandra lancifolia Cogn.,9559
+204,Melastomataceae,Leandra pennipilis (Triana) Cogn.,9593
+205,Melastomataceae,Leandra pilonensis Wurdack,9594
+206,Melastomataceae,Leandra umbellata DC.,9635
+207,Melastomataceae,Macairea theresiae Cogn.,85320
+208,Melastomataceae,Meriania calophylla (Cham.) Triana,9650
+209,Melastomataceae,Meriania claussenii (Naudin) Triana,9652
+210,Melastomataceae,Meriania paniculata (DC.) Triana,9658
+211,Melastomataceae,Merianthera sipolisii (Glaz. & Cogn.) Wurdack,102331
+212,Melastomataceae,Miconia brunnea DC.,9676
+213,Melastomataceae,Miconia formosa Cogn.,9706
+214,Melastomataceae,Miconia goldenbergiana Caddah,604866
+215,Melastomataceae,Miconia irwinii Wurdack,19663
+216,Melastomataceae,Miconia nordestina R.Goldenb. & E.C.O.Chagas,132538
+217,Melastomataceae,Miconia tentaculifera Naudin,9772
+218,Melastomataceae,Miconia urophylla DC.,9777
+219,Melastomataceae,Mouriri arborea Gardner,9815
+220,Melastomataceae,Mouriri cearensis Huber,19704
+221,Melastomataceae,Mouriri chamissoana Cogn.,9817
+222,Melastomataceae,Pleroma candolleanum (Mart. ex DC.) Triana,602859
+223,Melastomataceae,Pleroma fissinervium Schrank et Mart. ex DC.,603029
+224,Melastomataceae,Tibouchina barnebyana Wurdack,19719
+225,Melastomataceae,Tibouchina canescens (D.Don) Cogn.,9889
+226,Melastomataceae,Tibouchina francavillana Cogn.,9914
+227,Melastomataceae,Tibouchina regnellii Cogn.,9955
+228,Melastomataceae,Trembleya pentagona Naudin,9984
+229,Meliaceae,Guarea blanchetii C.DC.,9994
+230,Metteniusaceae,Emmotum harleyi R.Duno,103389
+231,Monimiaceae,Macropeplus dentatus (Perkins) I.Santos & Peixoto,10064
+232,Monimiaceae,Mollinedia longifolia Perkins,10091
+233,Moraceae,Ficus holosericea Schott,10166
+234,Moraceae,Ficus lagoensis C.C.Berg & Carauta,10144
+235,Moraceae,Ficus organensis (Miq.) Miq.,10174
+236,Myristicaceae,Virola officinalis Warb.,10200
+237,Myrtaceae,Calyptranthes grandiflora O.Berg,10285
+238,Myrtaceae,Calyptranthes obovata Kiaersk.,10292
+239,Myrtaceae,Calyptranthes rufa O.Berg,19832
+240,Myrtaceae,Calyptranthes spruceana O.Berg,36871
+241,Myrtaceae,Campomanesia simulans M.L.Kawas.,10332
+242,Myrtaceae,Curitiba prismatica (D.Legrand) Salywon & Landrum,10337
+243,Myrtaceae,Eugenia acutata Miq.,10339
+244,Myrtaceae,Eugenia arenaria Cambess.,10344
+245,Myrtaceae,Eugenia bacopari D.Legrand,10348
+246,Myrtaceae,Eugenia beaurepairiana (Kiaersk.) D.Legrand,25828
+247,Myrtaceae,Eugenia capitulifera O.Berg,10365
+248,Myrtaceae,Eugenia capparidifolia DC.,36905
+249,Myrtaceae,Eugenia chlorophylla O.Berg,10372
+250,Myrtaceae,Eugenia dichroma O.Berg,10383
+251,Myrtaceae,Eugenia ellipsoidea Kiaersk.,10390
+252,Myrtaceae,Eugenia expansa Spring ex Mart.,10395
+253,Myrtaceae,Eugenia flamingensis O.Berg,10398
+254,Myrtaceae,Eugenia handroi (Mattos) Mattos,10412
+255,Myrtaceae,Eugenia leptoclada O.Berg,10436
+256,Myrtaceae,Eugenia luschnathiana (O.Berg) Klotzsch ex B.D.Jacks.,10444
+257,Myrtaceae,Eugenia macrantha O.Berg,10447
+258,Myrtaceae,Eugenia macrosperma DC.,10449
+259,Myrtaceae,Eugenia magnifica Spring ex Mart.,10451
+260,Myrtaceae,Eugenia mandioccensis O.Berg,10454
+261,Myrtaceae,Eugenia monosperma Vell.,10461
+262,Myrtaceae,Eugenia neosilvestris Sobral,10475
+263,Myrtaceae,Eugenia oeidocarpa O.Berg,10480
+264,Myrtaceae,Eugenia pantagensis O.Berg,10488
+265,Myrtaceae,Eugenia platyphylla O.Berg,10500
+266,Myrtaceae,Eugenia puberula Nied.,10513
+267,Myrtaceae,Eugenia rosea DC.,25846
+268,Myrtaceae,Eugenia rostrifolia D.Legrand,10525
+269,Myrtaceae,Eugenia schottiana O.Berg,10528
+270,Myrtaceae,Eugenia sphenophylla O.Berg,10535
+271,Myrtaceae,Eugenia sprengelii DC.,10536
+272,Myrtaceae,Eugenia supraaxillaris Spring,10552
+273,Myrtaceae,Eugenia umbrosa O.Berg,10559
+274,Myrtaceae,Eugenia xanthoxyloides Cambess.,10569
+275,Myrtaceae,Eugenia zuccarinii O.Berg,10571
+276,Myrtaceae,Marlierea polygama (O.Berg) D.Legrand,10609
+277,Myrtaceae,Marlierea teuscheriana (O.Berg) D.Legrand,10627
+278,Myrtaceae,Myrceugenia acutata D.Legrand,62848
+279,Myrtaceae,Myrceugenia acutiflora (Kiaersk.) D.Legrand & Kausel,10632
+280,Myrtaceae,Myrceugenia cucullata D.Legrand,10637
+281,Myrtaceae,Myrceugenia mesomischa (Burret) D.Legrand & Kausel,10646
+282,Myrtaceae,Myrcia eugeniopsoides (D.Legrand & Kausel) Mazine,605439
+283,Myrtaceae,Myrcia ferruginosa Mazine,582884
+284,Myrtaceae,Myrcia multipunctata Mazine,605440
+285,Myrtaceae,Myrcia vellozoi Mazine,605441
+286,Myrtaceae,Myrciaria disticha O.Berg,10790
+287,Myrtaceae,Myrciaria ferruginea O.Berg,10791
+288,Myrtaceae,Myrciaria glomerata O.Berg,10795
+289,Myrtaceae,Myrciaria guaquiea (Kiaersk.) Mattos & D.Legrand,19885
+290,Myrtaceae,Myrciaria pilosa Sobral & Couto,10798
+291,Myrtaceae,Myrciaria strigipes O.Berg,10801
+292,Myrtaceae,Neomitranthes warmingiana (Kiaersk.) Mattos,10820
+293,Myrtaceae,Siphoneugena kiaerskoviana (Burret) Kausel,10895
+294,Nyctaginaceae,Andradea floribunda Allemão,10900
+295,Nyctaginaceae,Ramisia brasiliensis Oliv.,10935
+296,Ochnaceae,Ouratea multiflora (Pohl) Engl.,105592
+297,Ochnaceae,Ouratea polygyna Engl.,19934
+298,Ochnaceae,Ouratea xerophila Rizzini,79462
+299,Olacaceae,Cathedra rubricaulis Miers,10955
+300,Olacaceae,Ximenia coriacea Engl.,19961
+301,Peraceae,Pera furfuracea Müll.Arg.,36196
+302,Phyllanthaceae,Phyllanthus riedelianus Müll.Arg.,38557
+303,Picramniaceae,Picramnia excelsa Kuhlm. ex Pirani,12596
+304,Polygonaceae,Coccoloba oblonga Lindau,13707
+305,Polygonaceae,Coccoloba schwackeana Lindau,20602
+306,Primulaceae,Cybianthus goyazensis Mez,31457
+307,Primulaceae,Myrsine leuconeura Mart.,121425
+308,Primulaceae,Myrsine rubra M.F.Freitas & Kin.-Gouv.,10240
+309,Proteaceae,Roupala longepetiolata Pohl,13798
+310,Putranjivaceae,Drypetes sessiliflora Allemão,13806
+311,Rhamnaceae,Ziziphus platyphylla Reissek,20676
+312,Rhamnaceae,Ziziphus undulata Reissek,20677
+313,Rubiaceae,Alseis latifolia Gleason,20684
+314,Rubiaceae,Alseis sertaneja L. Marinho & J.G. Jardim,603292
+315,Rubiaceae,Appunia triphylla Ducke,71526
+316,Rubiaceae,Bathysa mendoncaei K.Schum.,20689
+317,Rubiaceae,Bathysa nicholsonii K.Schum.,13839
+318,Rubiaceae,Calycophyllum papillosum J.H.Kirkbr.,13849
+319,Rubiaceae,Calycophyllum tefense J.H.Kirkbr.,38665
+320,Rubiaceae,Chimarrhis barbata (Ducke) Bremek.,38668
+321,Rubiaceae,Chomelia parviflora (Müll.Arg.) Müll.Arg.,32551
+322,Rubiaceae,Chomelia parvifolia (Standl.) Govaerts,13871
+323,Rubiaceae,Chomelia pedunculosa Benth.,13872
+324,Rubiaceae,Coussarea accedens Müll.Arg.,13894
+325,Rubiaceae,Coussarea andrei M.S.Pereira & M.R.V.Barbosa,105764
+326,Rubiaceae,Coussarea capitata (Benth.) Müll.Arg.,13896
+327,Rubiaceae,Coussarea congestiflora Müll.Arg.,13898
+328,Rubiaceae,Coussarea leptopus Müll.Arg.,13904
+329,Rubiaceae,Coussarea megistophylla Standl.,13905
+330,Rubiaceae,Coussarea verticillata Müll.Arg.,13911
+331,Rubiaceae,Duroia hirsutissima Steyerm.,24440
+332,Rubiaceae,Duroia palustris Ducke,38767
+333,Rubiaceae,Faramea bicolor J.G.Jardim & Zappi,13948
+334,Rubiaceae,Faramea biflora J.G.Jardim & Zappi,13949
+335,Rubiaceae,Faramea martiana Müll.Arg.,13970
+336,Rubiaceae,Faramea oligantha Müll.Arg.,13980
+337,Rubiaceae,Faramea truncata (Vell.) Müll.Arg.,13995
+338,Rubiaceae,Ferdinandusa leucantha Standl.,38833
+339,Rubiaceae,Guettarda hoffmannseggii Müll.Arg.,38869
+340,Rubiaceae,Guettarda hypoglauca Standl.,38870
+341,Rubiaceae,Isertia longifolia (Hoffmanns. ex Schult.) K.Schum.,38891
+342,Rubiaceae,Ixora cowanii Bremek.,38898
+343,Rubiaceae,Ixora martinsii Standl.,38905
+344,Rubiaceae,Ixora schottiana Müll.Arg.,73086
+345,Rubiaceae,Ixora truncata Müll.Arg.,73091
+346,Rubiaceae,Psychotria alto-macahensis M. Gomes,127961
+347,Rubiaceae,Psychotria glaziovii Müll.Arg.,14176
+348,Rubiaceae,Remijia asperula Standl.,39237
+349,Rubiaceae,"Rudgea agresteophila Zappi, J.G. Jardim & Bruniera",603871
+350,Rubiaceae,Rudgea coriacea (Spreng.) K.Schum.,14247
+351,Rubiaceae,Rudgea jacobinensis Müll.Arg.,20851
+352,Rubiaceae,Rudgea malpighiacea Standl.,39300
+353,Rubiaceae,Rudgea mouririoides Standl.,39303
+354,Rubiaceae,Rudgea nodosa (Cham.) Benth.,14261
+355,Rubiaceae,Rudgea obtusa Standl.,32683
+356,Rubiaceae,Rudgea recurva Müll.Arg.,14265
+357,Rubiaceae,Schradera brasiliensis Mart. ex Schult.f. & Schult.,87589
+358,Rubiaceae,Simira pilosa M.R.V.Barbosa & Peixoto,39342
+359,Rubiaceae,Sphinctanthus acutilobus Huber,39408
+360,Rubiaceae,Stachyarrhena acutiloba Steyerm.,39412
+361,Rubiaceae,Stachyarrhena harleyi J.H.Kirkbr.,14326
+362,Rutaceae,Angostura quinquefolia Kallunki,315
+363,Rutaceae,Conchocarpus diadematus Pirani,449
+364,Rutaceae,Conchocarpus fontanesianus (A. St.-Hil.) Kallunki & Pirani,453
+365,Rutaceae,Conchocarpus santosii Pirani & Kallunki,482
+366,Rutaceae,Esenbeckia decidua Pirani,580
+367,Rutaceae,Esenbeckia oligantha Kaastra,606
+368,Rutaceae,Galipea congestiflora Pirani,734
+369,Rutaceae,Galipea grandifolia Engl.,744
+370,Rutaceae,Galipea laxiflora Engl.,750
+371,Rutaceae,Galipea revoluta Pirani,765
+372,Rutaceae,Helietta glaziovii (Engl.) Pirani,777
+373,Rutaceae,Hortia longifolia Spruce ex Engl.,791
+374,Rutaceae,Hortia neblinensis Maguire & B.M.Boom,793
+375,Rutaceae,Neoraputia trifoliata (Engl.) Emmerich ex Kallunki,852
+376,Rutaceae,Pilocarpus grandiflorus Engl.,874
+377,Rutaceae,Pilocarpus sulcatus Skorupa,907
+378,Rutaceae,Ravenia infelix Vell.,964
+379,Rutaceae,Ravenia polygalaecalyx Ducke,965
+380,Rutaceae,Ticorea froesii Kallunki,1036
+381,Rutaceae,Zanthoxylum djalma-batistae (Albuq.) P.G.Waterman,1098
+382,Rutaceae,Zanthoxylum gardneri Engl.,1114
+383,Rutaceae,Zanthoxylum kleinii (R.S.Cowan) P.G.Waterman,1124
+384,Rutaceae,Zanthoxylum nemorale Mart.,1139
+385,Rutaceae,Zanthoxylum retusum (Albuq.) P.G.Waterman,1161
+386,Salicaceae,Casearia oblongifolia Cambess.,14379
+387,Salicaceae,Casearia selloana Eichler,14382
+388,Sapindaceae,Cupania tenuivalvis Radlk.,32716
+389,Sapindaceae,Diatenopteryx grazielae Vaz & Andreata,20900
+390,Sapindaceae,"Matayba livescens (Radlk.) R. L. G. Coelho, V. C. Souza & Ferrucci",602975
+391,Sapindaceae,Matayba mollis Radlk.,32722
+392,Sapindaceae,Toulicia crassifolia Radlk.,20994
+393,Sapindaceae,Toulicia subsquamulata Radlk.,111749
+394,Simaroubaceae,Homalolepis cuneata (A.St.-Hil. & Tul.) Devecchi & Pirani,604260
+395,Simaroubaceae,Homalolepis ferruginea (A.St.-Hil.) Devecchi & Pirani,604263
+396,Siparunaceae,Siparuna cymosa Tolm.,14546
+397,Solanaceae,Cestrum corcovadense Miers,14638
+398,Solanaceae,Cestrum subpulverulentum Mart.,14653
+399,Solanaceae,Solanum castaneum Carvalho,14745
+400,Solanaceae,Solanum falciforme Farruggia,604395
+401,Solanaceae,Solanum sellowianum Sendtn.,14858
+402,Styracaceae,Styrax latifolius Pohl,21253
+403,Styracaceae,Styrax pedicellatus (Perkins) B.Walln.,21255
+404,Symplocaceae,Symplocos nitidiflora Brand,14912
+405,Symplocaceae,Symplocos pentandra (Mattos) Occhioni ex Aranha,111436
+406,Symplocaceae,Symplocos platyphylla (Pohl) Benth.,14914
+407,Symplocaceae,Symplocos pustulosa Aranha,121938
+408,Thymelaeaceae,Daphnopsis brasiliensis Mart.,14942
+409,Thymelaeaceae,Daphnopsis coriacea Taub.,14943
+410,Thymelaeaceae,Daphnopsis martii Meisn.,14945
+411,Thymelaeaceae,Daphnopsis pseudosalix Domke,14946
+412,Thymelaeaceae,Daphnopsis schwackeana Taub.,14948
+413,Thymelaeaceae,Daphnopsis utilis Warm.,14950
+414,Urticaceae,Coussapoa pachyphylla Akkermans & C.C.Berg,15047
+415,Urticaceae,Coussapoa sprucei Mildbr.,81607
+416,Vochysiaceae,Qualea ingens Warm.,33317
+417,Vochysiaceae,Vochysia discolor Warm.,103470
+418,Vochysiaceae,Vochysia lucida C.Presl,21584
+419,Vochysiaceae,Vochysia oppugnata (Vell.) Warm.,15310
+420,Vochysiaceae,Vochysia saldanhana Warm.,15317
+421,Fabaceae,Acosmium diffusissimum (Mohlenbr.) Yakovlev,18007
+422,Fabaceae,Aeschynomene monteiroi Afr.Fern. & P.Bezerra,78991
+423,Fabaceae,Androcalymma glabrifolium Dwyer,82643
+424,Fabaceae,Bauhinia aureopunctata Ducke,78512
+425,Fabaceae,Bauhinia bicolor (Bong.) Steud.,106585
+426,Fabaceae,Bauhinia membranacea Benth.,27790
+427,Fabaceae,Bauhinia piresii Vaz & G.P. Lewis,583062
+428,Fabaceae,Bauhinia uberlandiana Vaz & G.P. Lewis,583063
+429,Fabaceae,Calliandra duckei Barneby,18186
+430,Fabaceae,Cenostigma nordestinum E. Gagnon & G.P. Lewis,605753
+431,Fabaceae,Chamaecrista amabilis H.S.Irwin & Barneby,18290
+432,Fabaceae,Chamaecrista amorimii Barneby,18292
+433,Fabaceae,Chamaecrista celiae (H.S.Irwin & Barneby) H.S.Irwin & Barneby,27878
+434,Fabaceae,Chamaecrista fulgida Barneby,27955
+435,Fabaceae,Chamaecrista lentiscifolia (Benth.) H.S.Irwin & Barneby,27984
+436,Fabaceae,Chamaecrista machaeriifolia (Benth.) H.S.Irwin & Barneby,27994
+437,Fabaceae,Chamaecrista nuda (H.S.Irwin & Barneby) H.S.Irwin & Barneby,28010
+438,Fabaceae,Chamaecrista pteropoda Barneby,78644
+439,Fabaceae,Chamaecrista spinulosa (H.S.Irwin & Barneby) H.S.Irwin & Barneby,28082
+440,Fabaceae,Chamaecrista subpeltata (Rizzini) H.S.Irwin & Barneby,104861
+441,Fabaceae,Chamaecrista unijuga (Benth.) Conc. et al.,105504
+442,Fabaceae,Copaifera cearensis Huber ex Ducke,78649
+443,Fabaceae,Copaifera piresii Ducke,82971
+444,Fabaceae,Coursetia vicioides (Nees & Mart.) Benth.,18440
+445,Fabaceae,Cynometra macrocarpa A.S.Tav.,83004
+446,Fabaceae,Cynometra marleneae A.S.Tav.,83007
+447,Fabaceae,Dahlstedtia lewisiana M.J. Silva & A.M.G. Azevedo,135541
+448,Fabaceae,Dicymbe amazonica Ducke,78673
+449,Fabaceae,Dicymbe arenicola W.A.Rodrigues,83073
+450,Fabaceae,Dimorphandra parviflora Spruce ex Benth.,78684
+451,Fabaceae,Eperua praesagata R.S.Cowan,83167
+452,Fabaceae,Erythrostemon calycina (Benth.) L.P.Queiroz,109823
+453,Fabaceae,"Hymenaea cangaceira R.B.Pinto, Mansano & A.M.G.Azevedo",604374
+454,Fabaceae,Leptolobium multijugum Sch.Rodr. & A.M.G.Azevedo,122554
+455,Fabaceae,Lonchocarpus praecox Mart. ex Benth.,18695
+456,Fabaceae,"Luetzelburgia amazonica D.B.O.S.Cardoso, L.P.Queiroz & H.C.Lima",83297
+457,Fabaceae,"Luetzelburgia neurocarpa D.B.O.S.Cardoso, L.P.Queiroz & H.C.Lima",101465
+458,Fabaceae,Machaerium caratinganum Kuhlm. & Hoehne,101137
+459,Fabaceae,Macrolobium conjunctum R.S.Cowan,83341
+460,Fabaceae,Macrolobium duckeanum R.S.Cowan,83345
+461,Fabaceae,Macrolobium urupaense Hoehne,115698
+462,Fabaceae,Mimosa bispiculata Barneby,31078
+463,Fabaceae,Mimosa capito Barneby,31096
+464,Fabaceae,Mimosa dominarum Barneby,31145
+465,Fabaceae,Mimosa gardneri Benth.,31162
+466,Fabaceae,Mimosa hebecarpa Benth.,31175
+467,Fabaceae,Mimosa neonitens (Benth.) L.M. Borges,604069
+468,Fabaceae,Mimosa rheiptera Barneby,31322
+469,Fabaceae,Mimosa sobralii Grings & O.S. Ribas,129847
+470,Fabaceae,"Mimosa urandiensis J.Santos-Silva, M.F.Simon & A.M.G.Azevedo",128484
+471,Fabaceae,Muellera laticifera (M.J. Silva et al.) M.J. Silva & A.M.G. Azevedo,134217
+472,Fabaceae,Muellera nitens M.J. Silva & A.M.G. Azevedo,135539
+473,Fabaceae,Myrocarpus leprosus Pickel,101156
+474,Fabaceae,Ormosia froesii Rudd,115577
+475,Fabaceae,Ormosia limae D.B.O.S.Cardoso & L.P.Queiroz,120563
+476,Fabaceae,"Ormosia timboensis D.B.O.S.Cardoso, Meireles & H.C.Lima",581910
+477,Fabaceae,Panurea bowdichioides C.H.Stirt. ex Povydysh & M.Yu.Gontsch.,130134
+478,Fabaceae,Paramachaerium krukovii Rudd,109317
+479,Fabaceae,"Paubrasilia echinata (Lam.) Gagnon, H.C.Lima & G.P.Lewis",602728
+480,Fabaceae,Peltogyne excelsa Ducke,78749
+481,Fabaceae,Peltogyne micrantha Ducke,78754
+482,Fabaceae,Piptadenia loefgreniana Hoehne,18951
+483,Fabaceae,"Pterocarpus monophyllus B.B.Klitgaard, L.P.de Queiroz & G.P.Lewis",19001
+484,Fabaceae,Pterocarpus ternatus Rizzini,79141
+485,Fabaceae,Senegalia cearensis Terra & Garcia,603878
+486,Fabaceae,Senegalia giganticarpa (G.P.Lewis) Seigler & Ebinger,101000
+487,Fabaceae,Senegalia incerta (Hoehne) Seigler & Ebinger,135087
+488,Fabaceae,Senegalia latifoliola (Kuntze) Seigler & Ebinger,103530
+489,Fabaceae,Senegalia ricoae (Bocage & Miotto) L.P.Queiroz,103573
+490,Fabaceae,Stryphnodendron duckeanum Occhioni,23175
+491,Fabaceae,"Swartzia alagoensis R. B. Pinto, Torke & Mansano",130703
+492,Fabaceae,"Swartzia arenophila R. B. Pinto, Torke & Mansano",130704
+493,Fabaceae,Swartzia fimbriata Ducke,78800
+494,Rubiaceae,Kerianthera longiflora Zappi & C.T. Oliveira,127903
+495,Rubiaceae,Ladenbergia chapadensis S.Moore,32610
+496,Rubiaceae,Palicourea apiculata (Müll.Arg.) C.MTaylor,604052
+497,Rubiaceae,Palicourea fissistipula (Müll.Arg.) C.M.Taylor,604054
+498,Rubiaceae,Palicourea forsteronioides (Müll.Arg.) C.M.Taylor,604057
+499,Rubiaceae,Palicourea malaneoides (Müll.Arg.) C.M.Taylor,604058
+500,Rubiaceae,Palicourea minutiflora (Müll.Arg.) C.M.Taylor,604060
+501,Rubiaceae,Platycarpum egleri G.K.Rogers,39049
+502,Rubiaceae,Platycarpum froesii Bremek.,39050
+503,Rubiaceae,Psychotria krukovii Standl.,39135
+504,Rubiaceae,Psychotria lagoensis Müll.Arg.,32644
+505,Rubiaceae,Psychotria subspathulata (Müll.Arg.) C.M.Taylor,14222
+506,Rubiaceae,Remijia physophora Benth. ex K.Schum.,39253
+507,Rubiaceae,Retiniphyllum kuhlmannii Standl.,39263
