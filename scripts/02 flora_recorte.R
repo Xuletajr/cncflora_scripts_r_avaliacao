@@ -108,12 +108,15 @@ treespp4 <- treespp3 %>%
    dplyr::left_join(flora) %>% 
    dplyr::arrange(final_family, nome_especie)
 
-# Selecionar as colunas que ficarão na planilha que será exportada
+# Selecionar as colunas que ficarão na planilha que será exportada----
 treespp4 <- treespp3 %>%
    left_join(flora) %>% 
    dplyr::select(original_family, original_name, name_in_Flora, original_ID, final_family, 
                  scientificName, taxonID, vernacular_names, notes, tax_notes,
                  notes_fam, nome_especie, establishmentMeans, occurrenceRemarks, location,
-                 lifeForm, vegetationType, habitat)
+                 lifeForm, vegetationType, habitat, GTSearch)
                  
-                  55) 
+# Exportar a planilha das espécies com informações do Flora do Brasil 2020-IPT
+write.csv(treespp4, "./results/names_flora.csv", fileEncoding = "UTF-8", row.names = FALSE, na = "")                
+
+######   end----
