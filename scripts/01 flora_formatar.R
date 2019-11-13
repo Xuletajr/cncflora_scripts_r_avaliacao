@@ -149,7 +149,7 @@ vernacular <- read_delim("./ipt/vernacularname.txt", delim = "\t") %>%
 
 names(vernacular)
 
-# Ler planilha do Global Tree Search
+# Ler planilha do Global Tree Search. Baixado de https://tools.bgci.org/global_tree_search.php 
 gtsearch <- read.csv("./data/global_tree_search_trees_1_3.csv") %>%
    mutate(GTSearch = "sim") %>% 
    rename(nome_especie = Taxon.name) %>% 
@@ -164,7 +164,7 @@ all  <- left_join(taxon, distribution_mod) %>%
                             simplify2array()) %>% 
    left_join(gtsearch)
 
-# Exportar planilha csv com todos os dados da flora do brasil + GTS juntos
+# Exportar planilha com todos os dados da flora do brasil + GTS juntos
 write.csv(all, "./ipt/all_flora.csv", fileEncoding = "UTF-8")
 
 ######   end----
