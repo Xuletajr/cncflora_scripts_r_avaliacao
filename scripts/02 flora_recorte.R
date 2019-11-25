@@ -115,11 +115,11 @@ treespp4 <- treespp3 %>%
                  scientificName, taxonID, vernacular_names, notes, tax_notes,
                  notes_fam, nome_especie, establishmentMeans, occurrenceRemarks, location,
                  lifeForm, vegetationType, habitat, GTSearch) %>%
-   rename(Família_original = original_family, nome_original = original_name, 
-          Nome_no_flora, = name_in_Flora, Substrato = habitat, ID_original = original_ID, 
+   rename(Família_original = original_family, Nome_original = original_name, 
+          Nome_no_flora = name_in_Flora, Substrato = habitat, ID_original = original_ID, 
           Família_final = final_family, Nome_científico = scientificName, 
-          Nome_popular = vernacular_name, Notas = notes, Notas_tax = tax_notes, 
-          Notas_fam = notes_fam)
+          Nome_popular = vernacular_names, Notas = notes, Notas_tax = tax_notes, 
+          Notas_fam = notes_fam, Origem = establishmentMeans)
                  
 # Exportar a planilha das espécies com informações do Flora do Brasil 2020-IPT
 write.csv(treespp4, "./results/names_flora.csv", fileEncoding = "UTF-8", row.names = FALSE, na = "")                
