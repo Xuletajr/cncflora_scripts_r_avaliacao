@@ -3,9 +3,13 @@
 ##############################################################################################################
 
 # Ler pacotes
-library(readxl)
 library(dplyr)
-library(tidyr)
-library(biogeo)
-library(readr)
 library(stringr)
+library(readxl)
+library(readr)
+library(rgbif)
+
+# Adaptei a função datagbif.R disponível no GitHub de Pablo Hendrigo Alves de Melo:
+# Original disponível em: https://github.com/pablopains/MergeSpeciesOccurrence/blob/master/funcoesgbif.R
+# Adaptada disponível em: https://github.com/Xuletajr/MergeSpeciesOccurrence/edit/master/funcoesgbif.R
+source("./functions/funcoesgbif.R") 
