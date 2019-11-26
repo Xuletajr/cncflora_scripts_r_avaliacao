@@ -5,7 +5,6 @@
 # Ler pacotes
 library(dplyr)
 library(stringr)
-library(readxl)
 library(readr)
 library(rgbif)
 
@@ -94,6 +93,8 @@ for (i in 1:length(especies)) {
          
          warning(paste("No key found for", especies[i], "\n"))
       
-         }
-      } 
-   }
+      }
+   } 
+}
+
+######   end----
