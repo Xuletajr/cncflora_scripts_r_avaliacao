@@ -11,7 +11,7 @@ library(readr)
 library(stringr)
 
 # Os dados de ocorrência foram baixados diratamente do site do speciesLink buscando 40 spp por vez utilizando
-# --- fonte: www.splink.org.br
+# o binômio das espécies  ---- fonte: www.splink.org.br
 # Próximo passa seria automatizar o script para baixar diretamente as ocorrências do speciesLink, uma possibilidade
 # é seria a função 'rspeciesLink' da Sara Mortara (https://github.com/saramortara/rspeciesLink) --- Precisa testar. 
 
