@@ -13,8 +13,8 @@ library(rgbif)
 # Adaptada disponível em: https://github.com/Xuletajr/MergeSpeciesOccurrence/edit/master/funcoesgbif.R
 source("./functions/funcoesgbif.R") 
 
-# Ler a planilha com as espécies de plantas
-treespp <- readr::read_csv("./results/names_flora.csv") #%>% dplyr::select(-1)
+# Ler a planilha com as espécies de plantas do recorte
+treespp <- readr::read_csv("./results/names_flora.csv")
 
 # Checando o número de espécies
 unique(treespp$nome_especie)
