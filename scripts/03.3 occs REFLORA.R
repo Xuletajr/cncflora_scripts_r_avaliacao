@@ -58,9 +58,9 @@ reflora_all2 %>% count(is.na(scientificName)) # Quantos nomes vieram sem autor (
 # Ajustar algumas informações da planilha para ficar no formato usado pelo CNCFlora
 # 
 reflora_all3 <- reflora_all2 %>%  
-   dplyr::mutate(year = lubridate::year(dmy('De.'))) %>%    # Formatando data coleta - ano
-   dplyr::mutate(month = lubridate::month(dmy('De.'))) %>%  # Formatando data coleta - mês
-   dplyr::mutate(day = lubridate::day(dmy('De.'))) %>%      # Formatando data coleta - dia
+   dplyr::mutate(year =  lubridate::year(dmy('De.'))) %>%    # Formatando data coleta - ano
+   dplyr::mutate(month = lubridate::month(dmy('De.'))) %>%   # Formatando data coleta - mês
+   dplyr::mutate(day =   lubridate::day(dmy('De.'))) %>%     # Formatando data coleta - dia
    dplyr::mutate(bibliographicCitation = "REFLORA") %>%
    dplyr::mutate(dateIdentified = lubridate::year(dmy('Data.da.Determinação'))) %>%
    tidyr::unite("occurrenceRemarks",'Descrição.da.Planta', Observações, remove = FALSE, sep = "|") %>%
@@ -69,6 +69,7 @@ reflora_all3 <- reflora_all2 %>%
                  fieldNumber = "",  acceptedNameUsage = "", comments = "") 
 
 unique(reflora_all3$occurrenceRemarks)
+unique(reflora_all3$year)
 
 # Mudando a latitude e longitude de GMS para decimal
 dd_Lat <- mm_Lat <- ss_Lat <- ns_Lat <- NA
