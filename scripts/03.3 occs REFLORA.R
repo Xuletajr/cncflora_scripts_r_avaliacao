@@ -39,13 +39,64 @@ reflora_all <- dplyr::bind_rows(reflora_1, reflora_2, reflora_3, reflora_4,
 write.csv(reflora_all, "./results/reflora_all.csv", fileEncoding = "UTF-8")
 
 # Juntando o gênero e epíteto específico em uma coluna
-reflora_all <- reflora_all %>% 
+# O código que fiz abaixo para separar as datas só funciona se ler a planilha toda novamente. 
+reflora_all <- read.csv("./results/reflora_all.csv", fileEncoding = "UTF-8") %>% 
+   select(-1) %>% 
    dplyr::mutate(Gênero = str_to_title(Gênero)) %>%
    dplyr::mutate(Espécie = str_to_lower(Espécie)) %>%
-   tidyr::unite("nome_especie", Gênero, Espécie, remove = FALSE, sep = " ") 
+   unite("nome_especie", Gênero, Espécie, remove = FALSE, sep = " ") 
 
 # Juntando a planilha de ocorrências REFLORA com a planilha com informações do FLORA
 reflora_all2 <- left_join(reflora_all, treespp)
 
-# Quantos nomes vieram sem autor (i.e., NA's)
-reflora_all2 %>% count(is.na(scientificName))
+# Conferindo algumas informações da planilha
+names(reflora_all2) # variáveis disponíveis na planilha
+unique(reflora_all2$occurrenceRemarks)
+unique(reflora_all2$scientificName)
+reflora_all2 %>% count(is.na(scientificName)) # Quantos nomes vieram sem autor (i.e., NA's)
+
+# Ajustar algumas informações da planilha para ficar no formato usado pelo CNCFlora
+# 
+reflora_all3 <- reflora_all2 %>%  
+   dplyr::mutate(year = lubridate::year(dmy('De.'))) %>%    # Formatando data coleta - ano
+   dplyr::mutate(month = lubridate::month(dmy('De.'))) %>%  # Formatando data coleta - mês
+   dplyr::mutate(day = lubridate::day(dmy('De.'))) %>%      # Formatando data coleta - dia
+   dplyr::mutate(bibliographicCitation = "REFLORA") %>%
+   dplyr::mutate(dateIdentified = lubridate::year(dmy('Data.da.Determinação'))) %>%
+   tidyr::unite("occurrenceRemarks",'Descrição.da.Planta', Observações, remove = FALSE, sep = "|") %>%
+   dplyr::mutate(modified = "", institutionCode = "", identificationQualifier = "", 
+                 occurrenceID = "", infraspecificEpithet = "", typeStatus = "",
+                 fieldNumber = "",  acceptedNameUsage = "", comments = "") 
+
+unique(reflora_all3$occurrenceRemarks)
+
+# Mudando a latitude e longitude de GMS para decimal
+dd_Lat <- mm_Lat <- ss_Lat <- ns_Lat <- NA
+
+for(i in 1:nrow(reflora_all3)){
+   dd_Lat[i] <- parse_number(str_split_fixed(reflora_all3$'Latitude.Mínima'[i], " ", 3))[1]
+   mm_Lat[i] <- parse_number(str_split_fixed(reflora_all3$'Latitude.Mínima'[i], " ", 3))[2]
+   ss_Lat[i] <- parse_number(str_split_fixed(reflora_all3$'Latitude.Mínima'[i], " ", 3))[3]
+   ns_Lat[i] <- str_extract(reflora_all3$'Latitude.Mínima'[i], "[a-zA-Z]")
+}
+
+unique(ns_Lat)
+
+dd_Long <- mm_Long <- ss_Long <- ns_Long <- NA
+
+for(i in 1:nrow(reflora_all3)){
+   dd_Long[i] <- parse_number(str_split_fixed(reflora_all3$'Longitude.Mínima'[i], " ", 3))[1]
+   mm_Long[i] <- parse_number(str_split_fixed(reflora_all3$'Longitude.Mínima'[i], " ", 3))[2]
+   ss_Long[i] <- parse_number(str_split_fixed(reflora_all3$'Longitude.Mínima'[i], " ", 3))[3]
+   ns_Long[i] <- str_extract(reflora_all3$'Longitude.Mínima'[i], "[a-zA-Z]")
+}
+
+unique(ns_Long)
+
+reflora_all4 <- reflora_all3 %>% 
+   mutate(decimalLatitude = round(dms2dd(dd_Lat, mm_Lat, ss_Lat, ns_Lat), digits = 6)) %>%
+   mutate(decimalLongitude = round(dms2dd(dd_Long, mm_Long, ss_Long, ns_Long), digits = 6))
+
+reflora_all4$decimalLatitude
+reflora_all4 %>% select(scientificName, Latitude.Mínima, Longitude.Mínima, decimalLatitude, decimalLongitude)  %>%
+   write.csv("./results/reflora_all4.csv", na = "", row.names = FALSE, fileEncoding = "UTF-8")
