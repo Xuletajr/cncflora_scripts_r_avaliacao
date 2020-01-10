@@ -100,3 +100,60 @@ reflora_all4 <- reflora_all3 %>%
 reflora_all4$decimalLatitude
 reflora_all4 %>% select(scientificName, Latitude.Mínima, Longitude.Mínima, decimalLatitude, decimalLongitude)  %>%
    write.csv("./results/reflora_all4.csv", na = "", row.names = FALSE, fileEncoding = "UTF-8")
+
+# Preparando os dados do reflora com a mesma estrutura da planilha modelo do sistema do CNCFlora
+names(reflora_all4)
+unique(reflora_all4$final_family)
+
+reflora_all5 <- reflora_all4 %>% 
+   dplyr::mutate(acceptedNameUsage = scientificName) %>%
+   dplyr::mutate(scientificNameAuthorship = word(acceptedNameUsage, 3, -1, sep = " ")) %>%
+   dplyr::mutate(scientificName = nome_especie) %>%
+   dplyr::select(modified, institutionCode, 'Herbário.de.Origem', 'Código.de.Barra',
+                 scientificName, identificationQualifier, final_family, Gênero, Espécie,
+                 infraspecificEpithet, scientificNameAuthorship, Determinador, dateIdentified,
+                 typeStatus, 'Número.da.Coleta', fieldNumber, Coletor, year, 
+                 month, day, País, Estado, Município, 'Descrição.da.Localidade',
+                 decimalLatitude, decimalLongitude, occurrenceRemarks, acceptedNameUsage,
+                 occurrenceID, comments, bibliographicCitation) %>%
+   dplyr::rename(collectionCode = 'Herbário.de.Origem',
+                 catalogNumber= 'Código.de.Barra',
+                 family = final_family,
+                 genus = Gênero, 
+                 specificEpithet = Espécie,
+                 identifiedBy = Determinador, 
+                 recordNumber = 'Número.da.Coleta', 
+                 recordedBy = Coletor,
+                 country = País, 
+                 stateProvince = Estado, 
+                 municipality = Município,
+                 locality = 'Descrição.da.Localidade')
+
+# Exportar a ocorr?ncia geral com as colunas j? formatadas
+write.csv(reflora_all5, "./results/reflora_all5.csv", fileEncoding = "UTF-8",
+          na = "", row.names = FALSE)
+
+# Exportar as ocorrencias por esp?cie
+for (i in 1:length(especies)){
+   nome_arquivo <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "reflora raw.csv")
+   print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
+   
+   if (!file.exists(nome_arquivo)){
+      occs <- list()
+      occs[[i]] <- reflora_all5 %>% filter(scientificName %in% especies[i])
+      
+      print(lapply(occs,dim))
+      if (any(!is.null(lapply(occs,dim)))){
+         dim.null <- lapply(occs, function(x) {!is.null(dim(x))})
+         occs.f <- subset(occs, dim.null == T)
+         occs.f <- dplyr::bind_rows(occs.f)
+         print(dim(occs.f))
+         write.csv(occs.f, nome_arquivo, na = "", row.names = F, fileEncoding = "UTF-8")
+      }
+      
+   } else {
+      warning(paste("Species was not found in the REFLORA dataset", especies[i], "\n"))
+   }
+}
+
+######   end----
