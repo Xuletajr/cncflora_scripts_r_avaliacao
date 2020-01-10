@@ -38,9 +38,14 @@ reflora_all <- dplyr::bind_rows(reflora_1, reflora_2, reflora_3, reflora_4,
 # Exportar uma planilha csv com todos os dados do reflora juntos
 write.csv(reflora_all, "./results/reflora_all.csv", fileEncoding = "UTF-8")
 
-#
-reflora_all <- read.csv("./results/reflora_all.csv", fileEncoding = "UTF-8") %>% 
-   select(-1) %>% 
-   dplyr::mutate(G?nero = str_to_title(G?nero)) %>%
-   dplyr::mutate(Esp?cie = str_to_lower(Esp?cie)) %>%
-   tidyr::unite("nome_especie", G?nero, Esp?cie, remove = FALSE, sep = " ") 
+# Juntando o gênero e epíteto específico em uma coluna
+reflora_all <- reflora_all %>% 
+   dplyr::mutate(Gênero = str_to_title(Gênero)) %>%
+   dplyr::mutate(Espécie = str_to_lower(Espécie)) %>%
+   tidyr::unite("nome_especie", Gênero, Espécie, remove = FALSE, sep = " ") 
+
+# Juntando a planilha de ocorrências REFLORA com a planilha com informações do FLORA
+reflora_all2 <- left_join(reflora_all, treespp)
+
+# Quantos nomes vieram sem autor (i.e., NA's)
+reflora_all2 %>% count(is.na(scientificName))
