@@ -9,7 +9,7 @@ library(rgbif)
 library(readxl)
 library(readr)
 library(plyr)
-# Função change_NA_to_df.R disponível em: https://stevenmortimer.com/the-unfinished-duplicated-function/
+# Função "change_NA_to_df.R disponível" em: https://stevenmortimer.com/the-unfinished-duplicated-function/
 source("./functions/new_duplicated.R") 
 
 # Ler a planilha com as espécies de plantas do recorte
