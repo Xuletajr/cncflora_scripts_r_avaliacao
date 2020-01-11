@@ -3,18 +3,26 @@
 ##############################################################################################################
 
 # Ler pacotes
+library(dplyr)
+library(stringr)
+library(rgbif)
+library(readxl)
+library(readr)
+library(plyr)
+# Função change_NA_to_df.R disponível em: https://stevenmortimer.com/the-unfinished-duplicated-function/
+source("./functions/new_duplicated.R") 
 
 ###
 # Ajustar a coluna de coletor do inpa provenientes do GBIF (só vem o nome no curador como coletor)
-
+# Ler planilha contendo apnenas ocorrências do INPA compilada com dados do speciesLink
 tabela_inpa_splink <- read.csv(file = "./results/inpa_filtrado.csv", header = TRUE,
                                encoding = "UTF-8") 
 
-# a coluna acceptedNameUsage não existe e a coluna scientifiName nãõ tem autor
+# Checar que a única instituição desta planilha é o INPA
 unique(tabela_inpa_splink$institutioncode)
 
 tabela_inpa_splink <- tabela_inpa_splink %>%
-   mutate(institutioncode = "Instituto Nacional de Pesquisas da Amaz?nia (INPA)")
+   mutate(institutioncode = "Instituto Nacional de Pesquisas da Amazônia (INPA)")
 
 #todos os coletores do inpa
 colectores_inpa <- tabela_inpa_splink %>% 
