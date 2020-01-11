@@ -73,4 +73,37 @@ for (i in 1:length(especies)) {
    }
 }
 
-#
+###
+# Cria um diretório para juntar as três fontes de dados (GBIF, REFLORA E speciesLINK)
+dir.create("output_final2")
+
+# Loop para juntar as três fontes de dados
+for (i in 1:length(especies)) {
+   print(paste("Juntando dados --- ", especies[i], i, "de", length(especies), sep = " "))
+   
+   nome_reflora <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "reflora raw.csv")
+   nome_gbif <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "inpa.csv")
+   nome_speciesLink <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "speciesLink raw.csv") # com dois underlines ? o correto.
+   
+   nome_out <- paste0("./output_final2/", familias[i],"/",familias[i],"_", especies[i],"_", "juntas.csv")
+   
+   dir.create(paste0("./output_final2/",familias[i]), showWarnings = F)
+   
+   if(!file.exists(nome_out)) {
+      
+      #file_list <- list.files(path = paste0("./output_final/", familias[i]), 
+      #                       pattern = paste0(familias[i],"_", especies[i],"_ _"))
+      
+      reflora <- read.csv(nome_reflora, stringsAsFactors = F, encoding = "UTF-8")    
+      gbif <- read.csv(nome_gbif, stringsAsFactors = F, encoding = "UTF-8")
+      speciesLink <- read.csv(nome_speciesLink, stringsAsFactors = F, encoding = "UTF-8")
+      
+      #tabela_juntas <- lapply(paste0("./output_final/", familias[i],"/", file_list),function(x){
+      #   read.csv(x, stringsAsFactors = F, encoding = "UTF-8" ) 
+      #}) %>%
+      tabela_juntas <- rbind.fill(reflora, gbif, speciesLink) # bind_rows
+      
+      write.csv(tabela_juntas, file = nome_out, row.names = FALSE, 
+                na = "", fileEncoding = "UTF-8")
+   }
+}
