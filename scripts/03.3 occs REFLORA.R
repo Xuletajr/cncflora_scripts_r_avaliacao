@@ -68,8 +68,8 @@ reflora_all3 <- reflora_all2 %>%
                  occurrenceID = "", infraspecificEpithet = "", typeStatus = "",
                  fieldNumber = "",  acceptedNameUsage = "", comments = "") 
 
-unique(reflora_all3$occurrenceRemarks)
 unique(reflora_all3$year)
+unique(reflora_all3$occurrenceRemarks)
 
 # Mudando a latitude e longitude de GMS para decimal
 dd_Lat <- mm_Lat <- ss_Lat <- ns_Lat <- NA
