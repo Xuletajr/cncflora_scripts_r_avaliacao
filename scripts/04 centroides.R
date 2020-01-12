@@ -97,7 +97,7 @@ mpo_estado_unico <- setdiff(unique_mpo, dupl_mpo)
 # Loop para adicionar centroides----
 # Precisa trabalhar neste loop para que não pare... Loop tem parado em algumas circustâncias, por exemplo,
 # após as limpezas algumas espécies ficaram com zero ocorrências na planilha Clean que é utilzada aqui. 
-for (i in 488:length(especies)) {
+for (i in 1:length(especies)) {
    print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
    
    nome_clean <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
@@ -250,6 +250,81 @@ for (i in 1:length(especies)) {
    write.csv(tabela_exclude_final, file = nome_excluded,  fileEncoding = "UTF-8", na = "") 
    
    write.csv(tabela_especie2, file = nome_geofilt, fileEncoding = "UTF-8", na = "") 
+   
+}
+
+#### Função sp_filt de Diogo
+mpos <- rgdal::readOGR(dsn = "./data/shape/Limites_v2017", layer = "lim_municipio_a",
+                       encoding = "UTF-8", use_iconv = TRUE)
+
+tabela_centroides_2 <- tabela_centroides %>%
+   dplyr::rename(geocodigo = GEOCODIGO, nome = NOME) %>%
+   dplyr::mutate(geocodigo = as.factor(geocodigo))
+
+mpos@data <- left_join(mpos@data, tabela_centroides_2)
+proj4string(mpos)
+mpos2 <- sp::spTransform(mpos, CRSobj = CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+
+shape.municipios <- mpos2
+
+# Criar uma pasta para colocar os dados de ocorrência após passar pela função filt
+dir.create("output_final4")
+
+# Loop para função filt de Diogo
+# Igualmente o Loop anterior ele para em algumas circunstâncias. 
+for (i in 1:length(especies)) {  
+   print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
+   dir.create(paste0("./output_final4/",familias[i]), showWarnings = F)
+   
+   nome_geofilt <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
+                          "geofilt.csv")
+   
+   nome_spfilt <- paste0("./output_final4/",familias[i],"/",familias[i], "_", especies[i],"_",
+                         "sp_filt.csv")
+   
+   tabela_especie <- read.csv(nome_geofilt, row.names = 1, fileEncoding = "UTF-8",
+                              stringsAsFactors = F)
+   
+   tabela_especie2 <- tabela_especie %>% dplyr::mutate(ID = row_number())
+   
+   tabela_sppfilt <- tabela_especie2 %>%
+      dplyr::select(ID, scientificName, decimalLongitude, 
+                    decimalLatitude, municipality, stateProvince) %>%
+      dplyr::rename(species = scientificName,
+                    lon = decimalLongitude,
+                    lat = decimalLatitude,
+                    adm1 = stateProvince)
+   
+   tabela_sppfilt <- tabela_sppfilt[complete.cases(cbind(tabela_sppfilt$lon, tabela_sppfilt$lat)),]
+   
+   sp_filt_res <- filt_andrea(pts = tabela_sppfilt,
+                              inverted = T,
+                              shape.municipios = mpos2)
+   
+   print(nrow(tabela_especie))
+   print(nrow(tabela_especie2))
+   print(nrow(tabela_sppfilt))
+   print(nrow(sp_filt_res))
+   
+   sp_filt_res <- sp_filt_res %>% 
+      dplyr::rename(scientificName = species,
+                    decimalLongitude = lon,
+                    decimalLatitude = lat,
+                    lowercase_municipality = county.original)
+   
+   tabela_especie2 <- tabela_especie2 %>%
+      dplyr::mutate(lowercase_municipality = textclean::replace_non_ascii(tolower(municipality)))
+   
+   resultado_final <- left_join(tabela_especie2, sp_filt_res) %>%
+      dplyr::mutate(comments = paste(comments, filt)) %>%
+      dplyr::mutate(comments = ifelse(filt == "outside municipality",
+                                      paste(comments, "original in", lowercase_municipality, "falls in", county.shape),
+                                      comments)) %>%
+      dplyr::select(one_of(names(tabela_especie)))
+   
+   if (nrow(resultado_final) != nrow(tabela_especie)) stop()
+   
+   write.csv(resultado_final, nome_spfilt, fileEncoding = "UTF-8", row.names = FALSE)
    
 }
 
