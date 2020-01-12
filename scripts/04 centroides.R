@@ -1,5 +1,5 @@
 ##############################################################################################################
-   ###     Limpezas espaciais e adicionar coordenadas dos centróides dos municípios nas ocorrências     ###        
+   ###     Limpezas espaciais e adicionar coordenadas dos centroides dos municípios nas ocorrências     ###        
 ##############################################################################################################
 
 # Ler pacotes
@@ -11,6 +11,7 @@ library(textclean)
 library(flora)
 library(lubridate)
 library(rgdal)
+library(readr)
 # Função "filt_andrea.R"
 source("./functions/filt_andrea.R")
 
@@ -19,7 +20,7 @@ treespp <- readr::read_csv("./results/names_flora.csv")
 familias <- treespp$final_family
 especies <- treespp$nome_especie
 
-# Ler a planilha com as coordenadas dos centróides dos municípios
+# Ler a planilha com as coordenadas dos centroides dos municípios
 tabela_centroides <- read.delim(file = "./data/centroide_municipio.csv",
                                 header = TRUE, sep = ";",
                                 stringsAsFactors = FALSE,
@@ -36,7 +37,7 @@ tabela_centroides <- tabela_centroides %>%
 tabela_centroides$municipality
 tabela_centroides$stateProvince
 
-# Ler a planilha com as coordenadas dos centróides das UCs
+# Ler a planilha com as coordenadas dos centroides das UCs
 tabela_centroides_ucs <- read.delim(file = "./data/centroide_uc.csv",
                                     header = TRUE, sep = ";",
                                     stringsAsFactors = FALSE,
@@ -93,9 +94,10 @@ unique_mpo <- tabela_centroides %>%
 dupl_mpo <- tabela_centroides$municipality[duplicated(tabela_centroides$municipality)]
 mpo_estado_unico <- setdiff(unique_mpo, dupl_mpo)
 
-# Loop para adicionar centróides----
-# Precisa trabalhar neste loop para que não pare... Loop tem parado em algumas circustâncias. 
-for (i in 1:length(especies)) {
+# Loop para adicionar centroides----
+# Precisa trabalhar neste loop para que não pare... Loop tem parado em algumas circustâncias, por exemplo,
+# após as limpezas algumas espécies ficaram com zero ocorrências na planilha Clean que é utilzada aqui. 
+for (i in 488:length(especies)) {
    print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
    
    nome_clean <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
@@ -217,5 +219,37 @@ for (i in 1:length(especies)) {
    write.csv(tabela_corrigida2, file = nome_centroides, fileEncoding = "UTF-8")
 }
 
+###
+# Fazendo filtros geoespaciais para passar pela função filt do Diogo. 
+# Precisa pensar melhor para colocar isso dentro de outro loop... 
+
+for (i in 1:length(especies)) {
+   print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
+   nome_centroides <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
+                             "centroides.csv")
+   nome_excluded <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
+                           "excluded_geo.csv")
+   nome_geofilt <- paste0("./output_final3/",familias[i],"/",familias[i], "_", especies[i],"_",
+                          "geofilt.csv")
+   
+   tabela_especie <- read_csv(nome_centroides, locale = locale(encoding = "UTF-8"),
+                              na = c("", "NA"))
+   
+   tabela_exclude1 <- tabela_especie %>% dplyr::filter(is.na(decimalLatitude) | is.na(decimalLongitude))
+   
+   tabela_especie1 <- dplyr::anti_join(tabela_especie, tabela_exclude1)
+  
+   # Excluindo dados que caiam fora do limite do Brasil. 
+   tabela_exclude2 <- tabela_especie1 %>% dplyr::filter(decimalLatitude < -33.753 | decimalLatitude > 5.272 | 
+                                                           decimalLongitude < -73.991 | decimalLongitude > -28.836 )
+   
+   tabela_especie2 <- dplyr::anti_join(tabela_especie1, tabela_exclude2) 
+   
+   tabela_exclude_final <- plyr::rbind.fill(tabela_exclude1, tabela_exclude2) 
+   write.csv(tabela_exclude_final, file = nome_excluded,  fileEncoding = "UTF-8", na = "") 
+   
+   write.csv(tabela_especie2, file = nome_geofilt, fileEncoding = "UTF-8", na = "") 
+   
+}
 
 ######   end----
