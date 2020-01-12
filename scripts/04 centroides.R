@@ -10,6 +10,7 @@ library(readxl)
 library(textclean)
 library(flora)
 library(lubridate)
+library(rgdal)
 # Função "filt_andrea.R"
 source("./functions/filt_andrea.R")
 
@@ -38,3 +39,7 @@ tabela_centroides_ucs <- tabela_centroides_ucs %>%
    dplyr::mutate(uc = replace_non_ascii(tolower(NOME_UC1)))
 
 tabela_centroides_ucs$uc
+
+# Ler shape dos estados
+estados <- rgdal::readOGR(dsn = "./data/shape/Limites_v2017", layer = "lim_unidade_federacao_a",
+                          encoding = "UTF-8", use_iconv = TRUE)
