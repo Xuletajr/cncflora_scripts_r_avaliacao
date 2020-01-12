@@ -18,8 +18,17 @@ treespp <- readr::read_csv("./results/names_flora.csv")
 familias <- treespp$final_family
 especies <- treespp$nome_especie
 
-# Ler a planilha com a lista de coordenadas por centroide
+# Ler a planilha com as coordenadas dos centróides dos municípios
 tabela_centroides <- read.delim(file = "./data/centroide_municipio.csv",
                                 header = TRUE, sep = ";",
                                 stringsAsFactors = FALSE,
                                 fileEncoding = "ISO-8859-9")
+
+tabela_centroides$municipality
+tabela_centroides$stateProvince
+
+# Ler a planilha com as coordenadas dos centróides das UCs
+tabela_centroides_ucs <- read.delim(file = "./data/centroide_uc.csv",
+                                    header = TRUE, sep = ";",
+                                    stringsAsFactors = FALSE,
+                                    fileEncoding = "ISO-8859-9")
