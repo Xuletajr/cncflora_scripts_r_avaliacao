@@ -221,7 +221,8 @@ for (i in 488:length(especies)) {
 
 ###
 # Fazendo filtros geoespaciais para passar pela função filt do Diogo. 
-# Precisa pensar melhor para colocar isso dentro de outro loop... 
+# Precisa pensar melhor para colocar isso dentro de outro loop, principalmente alguns poucos 
+# pontos que podem cair fora do limite do Brasil... 
 
 for (i in 1:length(especies)) {
    print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
