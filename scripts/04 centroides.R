@@ -32,3 +32,9 @@ tabela_centroides_ucs <- read.delim(file = "./data/centroide_uc.csv",
                                     header = TRUE, sep = ";",
                                     stringsAsFactors = FALSE,
                                     fileEncoding = "ISO-8859-9")
+
+# Deixar todos os nomes das UCs em minúsculo
+tabela_centroides_ucs <- tabela_centroides_ucs %>%
+   dplyr::mutate(uc = replace_non_ascii(tolower(NOME_UC1)))
+
+tabela_centroides_ucs$uc
