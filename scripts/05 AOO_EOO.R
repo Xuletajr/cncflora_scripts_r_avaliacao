@@ -105,7 +105,7 @@ write.csv(tabela_final, file = "./results/tree_final_with_aooeoo.csv")
 
 ###
 # Geranr um mapa de distribuição para cada espécie e exportar para uma pasta
-dir.create("./_mapas/")
+dir.create("./mapas/")
 
 # Mapa com do Brasil com o limite dos Estados
 estados <- rgdal::readOGR(dsn="./data/shape/Limites_v2017", 
@@ -114,13 +114,15 @@ estados <- rgdal::readOGR(dsn="./data/shape/Limites_v2017",
 tabela_final$nusado
 
 # Loop para gerar o mapa de distribuição para cada espécie
+# Esse mapa pode ser melhor trabalhado para adicionar informações de bioma, UCs,
+# entre outras informações que possam ser relevantes para entender a distribuição das spp
 for (i in 1:length(especies)){
    print(paste(especies[i], familias[i], "- generating map", i, "of", length(especies)))
    
    nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
                         especies[i],"_", "final.csv") 
   
-   mypath <- paste0("./_mapas/", familias[i], "_", especies[i],"_", "mapa.jpg")
+   mypath <- paste0("./mapas/", familias[i], "_", especies[i],"_", "mapa.jpg")
    
    tabela.spfilt <- read.csv(nome_final) 
    
