@@ -39,7 +39,7 @@ for (i in 1:length(especies)) {
    nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
                         especies[i],"_", "final.csv")
    
-   data_csv1 <- paste0("./aaoeoo/", familias[i], "_", especies[i],"_", "aoo_eoo.csv")
+   data_csv1 <- paste0("./aaoeoo/", familias[i], "_", especies[i], "_", "aoo_eoo.csv")
    
    tabela.final <- read.csv(nome_final) 
    
@@ -53,6 +53,7 @@ for (i in 1:length(especies)) {
    red_aoo2 <- round(red::aoo(pts.utm@coords), digits = 2)
    
    # Só estimar EOO se a planilha de ocorrências tiver mais de 3 ocorrências
+   # Foi uma tentativa para que o loop não parasse com planilhas com menos de 4 ocorrências, mas não foi bem sucedido. 
    if (aoo2 < 4) {
       data <- data.frame(nome_especie = especies[i],
                          final_family = familias[i],
@@ -83,6 +84,6 @@ for (i in 1:length(especies)) {
    }
    
    # Exportar as planilhas com estimativas de EOO e AOO
-   write.csv(data, file = data_csv1, fileEncoding = "UTF-8", na="")
+   write.csv(data, file = data_csv1, fileEncoding = "UTF-8", na = "")
    
 }
