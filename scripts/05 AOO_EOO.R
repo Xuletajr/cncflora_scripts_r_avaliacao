@@ -88,20 +88,57 @@ for (i in 1:length(especies)) {
    
 }
 
-# Juntar os resultados de todas as espécies numa mesma planilha
-library(purrr)
-tabela_aoo_eoo <- list.files("./aoo", full.names = T) %>%
+# Juntar os resultados de EOO e AOO de todas as espécies numa mesma planilha
+tabela_aoo_eoo <- list.files("./aaoeoo", full.names = T) %>%
    purrr::map(.f = read.csv) %>%
-   bind_rows() %>% dplyr::select(-1)
+   dplyr::bind_rows() %>% 
+   dplyr::select(-1)
+
 names(tabela_aoo_eoo)
-dim(tabela_aoo_eoo)
 names(treespp)
+
 tabela_final <- left_join(treespp, tabela_aoo_eoo)
-tabela_final$eoo
+
 head(tabela_final)
+
 write.csv(tabela_final, file = "./results/tree_final_with_aooeoo.csv")
 
-names(tabela_final)
-eeo_alto <- tabela_final %>% filter(eoo > 50000) 
-eeo_baixo <- tabela_final %>% filter(eoo <= 50000) 
-eeo_na <- tabela_final %>% filter(is.na(eoo)) 
+###
+# Geranr um mapa de distribuição para cada espécie e exportar para uma pasta
+dir.create("./_mapas/")
+
+# Mapa com do Brasil com o limite dos Estados
+estados <- rgdal::readOGR(dsn="./data/shape/Limites_v2017", 
+                          layer="lim_unidade_federacao_a")
+
+tabela_final$nusado
+
+# Loop para gerar o mapa de distribuição para cada espécie
+for (i in 1:length(especies)){
+   print(paste(especies[i], familias[i], "- generating map", i, "of", length(especies)))
+   
+   nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
+                        especies[i],"_", "final.csv") 
+  
+   mypath <- paste0("./_mapas/", familias[i], "_", especies[i],"_", "mapa.jpg")
+   
+   tabela.spfilt <- read.csv(nome_final) 
+   
+   tabela <- tabela.spfilt[complete.cases(tabela.spfilt[,c("decimalLongitude", "decimalLatitude")]),]
+   coord <- tabela[,c("decimalLongitude", "decimalLatitude")]
+   
+   jpeg(file = mypath, width = 1800, height = 1800, res = 300)
+   
+   plot(estados, cex = 0.3)
+   
+   title(paste0(familias[i], "-", especies[i]), cex.main = 0.9,
+         sub = paste0("Número de occorrências (", tabela_final$nusado[i], ")"), cex.sub = 0.8)
+   
+   points(coord, col="red", cex = 0.5)
+   
+   # Fechar o mapa
+   dev.off()
+   
+}
+
+######   end----
