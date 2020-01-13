@@ -34,7 +34,7 @@ dir.create("./aaoeoo/")
 # do Rstudio, pois há um comando para plotar os pontos de ocorrência no mapa. Se não tiver com mapa aberto dará um erro:
 # "Error in plot.xy(xy.coords(x, y), type = type, ...) : invalid graphics state"
 # Conforme tem acontecido com os loops anteriores, este também tem para em algumas circustâncias
-for (i in 322:length(especies)) { 
+for (i in 1:length(especies)) { 
    print(paste(especies[i], familias[i], "- calculating AOO and EOO", i, "of", length(especies)))
    nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
                         especies[i],"_", "final.csv")
