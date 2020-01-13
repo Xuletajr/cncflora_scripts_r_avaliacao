@@ -271,7 +271,7 @@ shape.municipios <- mpos2
 dir.create("output_final4")
 
 # Loop para função filt de Diogo
-# Igualmente o Loop anterior ele para em algumas circunstâncias. 
+# Igualmente ao Loop anterior este para em algumas circunstâncias. 
 for (i in 1:length(especies)) {  
    print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
    dir.create(paste0("./output_final4/",familias[i]), showWarnings = F)
@@ -326,6 +326,75 @@ for (i in 1:length(especies)) {
    
    write.csv(resultado_final, nome_spfilt, fileEncoding = "UTF-8", row.names = FALSE)
    
+}
+
+# Verificar os pontos de ocorr?ncia que ca?ram fora do Brasil. 
+# Sobraram alguns pontos que ocorreram fora do Brasil. Tem que trabalhar essa questão antes,
+# talvez usando o shp do Brasil em algum loop anterior. Foi tomada uma decisão temporária aqui.
+
+sp_filt_final <- list.files("output_final4", pattern = "sp_filt.csv$", recursive = T, full.names = T)
+arq <- sp_filt_final %>% purrr::map(~read.csv(., row.names = 1, fileEncoding = "UTF-8"))
+
+# 
+arq2 <- arq %>% purrr::map( ~ select(.,
+                                     family, scientificName, decimalLatitude, 
+                                     decimalLongitude, country.original, stateProvince.original,
+                                     municipality.original, locality, nome, notes, comments,))
+arq3 <- arq2 %>% bind_rows()
+warnings()
+cuenta <- count(arq3, comments)
+
+cuenta
+
+no <- grep(pattern = "original in  falls", x = cuenta$comments)
+mpo <- grep(pattern = "outside municipality", x = cuenta$comments)
+
+length(no)
+length(mpo)
+cuenta %>% slice(-mpo)
+
+names(arq3)
+
+outside_brazil <- arq3 %>% 
+   dplyr::filter(comments == "original coordinates outside Brazil")
+
+unique(outside_brazil$scientificName)
+
+# Guardando em uma planilha as ocorrências que caíram fora do Brasil.
+write.csv(outside_brazil, "./results/outside_brazil.csv", fileEncoding = "UTF-8")
+
+# Filtrar as coordenadas que caíram fora do Brasil
+dir.create("output_final5")
+library(plyr)
+
+arq4 <- arq %>% 
+   plyr::rbind.fill() %>% 
+   dplyr::filter(!comments == "original coordinates outside Brazil")
+
+# Exportar planilhas com as ocorrências
+for (i in 1:length(especies)){
+   dir.create(paste0("./output_final5/",familias[i]), showWarnings = F)
+   nome_arquivo <- paste0("./output_final5/", familias[i],"/",familias[i],"_", especies[i],"_", "final.csv")
+   print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
+   
+   if (!file.exists(nome_arquivo)){
+      occs <- list()
+      occs[[i]] <- arq4 %>% filter(scientificName %in% especies[i])
+      
+      print(lapply(occs,dim))
+      if (any(!is.null(lapply(occs,dim)))){
+         dim.null <- lapply(occs, function(x) {!is.null(dim(x))})
+         occs.f <- subset(occs, dim.null == T)
+         occs.f <- dplyr::bind_rows(occs.f)
+         print(dim(occs.f))
+         write.csv(occs.f, nome_arquivo, na = "", fileEncoding = "UTF-8")
+      }
+      
+   } else {
+      
+      warning(paste("No data", especies[i], "\n"))
+      
+   }
 }
 
 ######   end----
