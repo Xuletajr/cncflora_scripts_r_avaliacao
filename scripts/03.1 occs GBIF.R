@@ -47,7 +47,7 @@ for(i in 1:length(especies)) {
 
 write.csv(gbif_name_backbone, "./results/gbif_name_backbone.csv", na = "",  fileEncoding = "UTF-8")
 
-# Cria uma pasta para colocar os dados de ocorrência que serão baixados 
+# Criar uma pasta para colocar os dados de ocorrência que serão baixados 
 dir.create("output_final")
 
 # Buscar registros no gbif---- Usando o script Andrea juntamente com do Pablo Hendrigo
