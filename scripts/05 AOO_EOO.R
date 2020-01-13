@@ -34,7 +34,7 @@ dir.create("./aaoeoo/")
 # do Rstudio, pois há um comando para plotar os pontos de ocorrência no mapa. Se não tiver com mapa aberto dará um erro:
 # "Error in plot.xy(xy.coords(x, y), type = type, ...) : invalid graphics state"
 # Conforme tem acontecido com os loops anteriores, este também tem para em algumas circustâncias
-for (i in 1:length(especies)) { 
+for (i in 322:length(especies)) { 
    print(paste(especies[i], familias[i], "- calculating AOO and EOO", i, "of", length(especies)))
    nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
                         especies[i],"_", "final.csv")
@@ -87,3 +87,21 @@ for (i in 1:length(especies)) {
    write.csv(data, file = data_csv1, fileEncoding = "UTF-8", na = "")
    
 }
+
+# Juntar os resultados de todas as espécies numa mesma planilha
+library(purrr)
+tabela_aoo_eoo <- list.files("./aoo", full.names = T) %>%
+   purrr::map(.f = read.csv) %>%
+   bind_rows() %>% dplyr::select(-1)
+names(tabela_aoo_eoo)
+dim(tabela_aoo_eoo)
+names(treespp)
+tabela_final <- left_join(treespp, tabela_aoo_eoo)
+tabela_final$eoo
+head(tabela_final)
+write.csv(tabela_final, file = "./results/tree_final_with_aooeoo.csv")
+
+names(tabela_final)
+eeo_alto <- tabela_final %>% filter(eoo > 50000) 
+eeo_baixo <- tabela_final %>% filter(eoo <= 50000) 
+eeo_na <- tabela_final %>% filter(is.na(eoo)) 
