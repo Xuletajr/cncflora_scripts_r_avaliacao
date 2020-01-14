@@ -104,4 +104,25 @@ tabela_UCs
 
 write.csv(tabela_UCs, "./results/tabela_UCs.csv", na = "", fileEncoding = "UTF-8")
 
+###
+# Verificar o ano de coleta --- tem coleta após 2010?
+library(tidyverse)
+
+spp_coleta <- matrix(data = NA, nrow = length(especies), ncol = 3)
+colnames(spp_coleta) <- c("nome_especie", "coleta2010", "n_coleta2010")
+
+for (i in 1:length(especies)){
+   arquivo <- paste0("./output_final5/",familias[i],"/", familias[i], "_", especies[i], "_final.csv")
+   
+   tabela <- read.csv(arquivo, fileEncoding = "UTF-8", na = "") %>%
+      dplyr::filter(year > 2010)
+   
+   spp_coleta[i,1] <- paste(especies[i])
+   spp_coleta[i,2] <- ifelse(nrow(tabela) > 0, "Sim", "Não")
+   spp_coleta[i,3] <- ifelse(nrow(tabela) > 0, nrow(tabela), "")
+   
+}
+
+write.csv(spp_coleta, "./results/spp_coleta.csv", fileEncoding = "UTF-8", na = "")
+
 ######   end----
