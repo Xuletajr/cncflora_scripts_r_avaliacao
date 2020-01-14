@@ -21,3 +21,12 @@ treespp <- read.csv("./results/aoo_veg_cites.csv", row.names = 1,
 
 especies <- treespp$nome_especie
 familias <- treespp$final_family
+
+# Plotando mapa do Brasil com Unidades de Conservação
+estados <- rgdal::readOGR(dsn="./data/shape/Limites_v2017", 
+                          layer="lim_unidade_federacao_a")
+
+st_crs(estados)
+plot(estados)
+
+plot(uc, add = T, col = "cyan") 
