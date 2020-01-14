@@ -95,7 +95,8 @@ for (i in 1:length(especies)) {
 tabela_UCs <- list.files("./UC", full.names = T, pattern = "UC.csv$", recursive = T) %>%
    purrr::map(.f = readr::read_csv) %>%
    dplyr::bind_rows() %>%
-   dplyr::select(-1)  %>%  group_by(nome_especie) %>% 
+   dplyr::select(-1)  %>%  
+   dplyr::group_by(nome_especie) %>% 
    dplyr::mutate(UCs = paste(UC, collapse = ", ")) %>%
    dplyr::select(-UC) %>% distinct() %>% ungroup()
 
@@ -103,3 +104,4 @@ tabela_UCs
 
 write.csv(tabela_UCs, "./results/tabela_UCs.csv", na = "", fileEncoding = "UTF-8")
 
+######   end----
