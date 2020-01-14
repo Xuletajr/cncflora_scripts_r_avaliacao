@@ -12,6 +12,7 @@ library(purrr)
 # Ler a planilha com as espécies de plantas do recorte
 treespp <- read.csv("./results/names_flora.csv", fileEncoding = "UTF-8") #, row.names = 1
 familias <- treespp$final_family
+# A lista de espécies precisa estar em ordem alfabética, senão irá ligar o uso e o link de uso com as espécies erradas
 especies <- unique(sort(treespp$nome_especie))
 
 # Specifying the url for desired website to be scraped
@@ -56,7 +57,7 @@ for (i in 1:length(especies)) {
    
 }
 
-# XXXXXXXXXXXXXXXXXXXXXXXXX
+# Ler todos os arquivos de uso e passar para uma planilha
 files <- list.files("./use", full.names = T)
 
 done <- files %>% 
