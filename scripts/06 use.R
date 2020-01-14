@@ -62,10 +62,11 @@ files <- list.files("./use", full.names = T)
 done <- files %>% 
    stringr::str_split("/", simplify = T) %>% 
    data.frame() %>% 
-   dplyr::select(4) %>%
-   dplyr::pull %>% 
-   stringr::str_split(".txt", simplify = T) %>% data.frame() %>% 
-   dplyr::select(1)
+   select(3) %>% # tem que pensar uma forma de mudar a seleção, pois isso pode mudar dependendo do caminho que é salvo
+   pull %>% 
+   str_split(".txt", simplify = T) %>% 
+   data.frame() %>% 
+   select(1)
 
 setdiff(done$X1, especies)
 setdiff(especies, done$X1)
@@ -84,18 +85,8 @@ for (i in seq_along(files)) {
       mutate(url = ifelse(use == "use", url_vectors_id, ""))
 }
 
-
 Results_use <- Res %>% bind_rows()
 
 write.csv(Results_use, "./results/Use_results_general.csv")
-
-done[2,] %>% stringr::str_split(" ", simplify = T) %>%
-   data.frame() %>% rename(Genero = X1, epiteto = X2)
-
-names <- especies %>% stringr::str_split(" ", simplify = T) %>% 
-   data.frame() %>% rename(Genero = X1, epiteto = X2)
-
-# TESTANDO AS LINHAS DO LOOP 
-readLines(files[2], skipNul = T)
 
 ######   end----
