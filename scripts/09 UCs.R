@@ -8,7 +8,7 @@ library(dplyr)
 library(sf)
 
 # Ler shape com as Unidades de Conservação
-uc <- rgdal::readOGR(dsn = "./data/shape/UCsW_GS84", layer = "UCs_wgs84", 
+uc <- rgdal::readOGR(dsn = "./data/shape/UCs_WGS84", layer = "UCs_wgs84", 
               use_iconv = TRUE, encoding = "UTF-8")
 
 st_crs(uc)
@@ -16,6 +16,8 @@ proj4string(uc)
 uc$NOME_UC1
 
 # Ler a planilha com as espécies de plantas do recorte
-treespp <- read.csv("./results/aoo_veg_cites.csv", row.names = 1, fileEncoding = "UTF-8")
+treespp <- read.csv("./results/aoo_veg_cites.csv", row.names = 1, 
+                    fileEncoding = "UTF-8")
+
 especies <- treespp$nome_especie
 familias <- treespp$final_family

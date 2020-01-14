@@ -7,7 +7,8 @@ library(readxl)
 library(flora)
 
 # Ler a planilha com as espécies de plantas do recorte
-aoo <- read.csv("./results/aoo_veg.csv", row.names = 1)
+aoo <- read.csv("./results/aoo_veg.csv", row.names = 1, 
+                fileEncoding = "UTF-8")
 
 # Ler planilha CITES---- 
 # Planilha foi baixada do site: http://checklist.cites.org/#/en
@@ -21,7 +22,7 @@ cites1 <- cites %>%
 
 # Conferir quais espécies estão com nomes listados nos apêndides da CITES
 which(aoo$nome_especie %in% cites1$FullName)
-aoo$nome_especie[c(105, 106,107)]
+aoo$nome_especie[c(100, 101,102)]
 
 # Adicionar uma coluna com informações se a espécies ocorre nos apêndices CITES
 # Neste caso só tinha spp no Apêndice II, tem que melhorar a função para listar corretamente
