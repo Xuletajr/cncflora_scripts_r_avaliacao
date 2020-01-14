@@ -30,3 +30,56 @@ st_crs(estados)
 plot(estados)
 
 plot(uc, add = T, col = "cyan") 
+
+# Criar uma pasta para colocar os dados de ocorrência em UCs
+dir.create("./UC")
+
+# Loop para checar quais ocorrências são em UCs
+for (i in 1:length(especies)) { 
+   print(paste(especies[i], familias[i], "- analyzing presence in UCs", i, "of", length(especies)))
+   
+   nome_final <- paste0("./output_final5/",familias[i],"/",familias[i], "_",
+                        especies[i],"_", "final.csv")
+   dir.create(paste0("./UC/",familias[i]), showWarnings = F)
+   uc_output <- paste0("./UC/", familias[i], "/", familias[i], "_", especies[i],"_", "UC.csv")
+   
+   tabela.spfilt <- read.csv(nome_final, row.names = 1, fileEncoding = "UTF-8") %>%
+      # Só checar ocorrência apenas para coordenadas orginais, centróides não são usados
+      dplyr::filter(comments %in% "original coordinates OK") 
+   
+   tabela <- tabela.spfilt[complete.cases(tabela.spfilt[,c("decimalLongitude", "decimalLatitude")]),]
+   pts <- SpatialPoints(tabela[,c("decimalLongitude", "decimalLatitude")])
+   coordinates(tabela) <- ~ decimalLongitude + decimalLatitude
+   proj4string(pts) <- CRS("+proj=longlat +datum=WGS84")
+   # Andrea estava utilizando sad69. Não consigui chegar a uma conclusão pq SAD69 pudesse ser melhor
+   pts.wgs84 <- spTransform(pts, CRS("+proj=longlat +datum=WGS84"))
+   
+   over_results <- sp::over(pts.wgs84, uc)
+   
+   n_in_uc <- over_results %>% 
+      dplyr::filter(!is.na(ID_UC0)) %>% 
+      dplyr::count() %>% 
+      dplyr::pull
+   
+   n_uc <- over_results %>% 
+      dplyr::filter(!is.na(ID_UC0)) %>% 
+      distinct::distinct(NOME_UC1) %>% 
+      dplyr::count() %>% 
+      dplyr::pull
+   
+   which_uc <- ifelse(n_in_uc == 0, NA, over_results %>%
+                         dplyr::filter(!is.na(ID_UC0)) %>%
+                         dplyr::distinct(NOME_UC1) %>%
+                         purrr::map(.f = stringr::str_to_title)) 
+   
+   final_res <- data.frame(nome_especie = especies[i],
+                           final_family = familias[i],
+                           nusado = nrow(tabela),
+                           occ_in_UC = n_in_uc,
+                           n_UC = n_uc,
+                           UC = which_uc[[1]])
+   
+   write.csv(final_res, file = uc_output, fileEncoding = "UTF-8")
+   
+}
+
