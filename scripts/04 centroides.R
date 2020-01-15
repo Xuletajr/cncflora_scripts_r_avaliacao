@@ -331,7 +331,7 @@ for (i in 1:length(especies)) {
    
 }
 
-# Verificar os pontos de ocorr?ncia que ca?ram fora do Brasil. 
+# Verificar os pontos de ocorrência que caíram fora do Brasil. 
 # Sobraram alguns pontos que ocorreram fora do Brasil. Tem que trabalhar essa questão antes,
 # talvez usando o shp do Brasil em algum loop anterior. Foi tomada uma decisão temporária aqui.
 
