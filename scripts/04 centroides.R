@@ -216,7 +216,8 @@ for (i in 1:length(especies)) {
    tabela_corrigida2[is.na(tabela_corrigida2)] <- ""
    
    # Para checar o resultado
-   write.csv(tabela_corrigida2, file = nome_centroides, fileEncoding = "UTF-8")
+   write.csv(tabela_corrigida2, file = nome_centroides, fileEncoding = "UTF-8",
+             row.names = FALSE)
 }
 
 ###
@@ -249,7 +250,8 @@ for (i in 1:length(especies)) {
    tabela_exclude_final <- plyr::rbind.fill(tabela_exclude1, tabela_exclude2) 
    write.csv(tabela_exclude_final, file = nome_excluded,  fileEncoding = "UTF-8", na = "") 
    
-   write.csv(tabela_especie2, file = nome_geofilt, fileEncoding = "UTF-8", na = "") 
+   write.csv(tabela_especie2, file = nome_geofilt, fileEncoding = "UTF-8", na = "", 
+             row.names = FALSE) 
    
 }
 
@@ -282,7 +284,7 @@ for (i in 1:length(especies)) {
    nome_spfilt <- paste0("./output_final4/",familias[i],"/",familias[i], "_", especies[i],"_",
                          "sp_filt.csv")
    
-   tabela_especie <- read.csv(nome_geofilt, row.names = 1, fileEncoding = "UTF-8",
+   tabela_especie <- read.csv(nome_geofilt, fileEncoding = "UTF-8",
                               stringsAsFactors = F)
    
    tabela_especie2 <- tabela_especie %>% dplyr::mutate(ID = row_number())
@@ -324,7 +326,8 @@ for (i in 1:length(especies)) {
    
    if (nrow(resultado_final) != nrow(tabela_especie)) stop()
    
-   write.csv(resultado_final, nome_spfilt, fileEncoding = "UTF-8", row.names = FALSE)
+   write.csv(resultado_final, nome_spfilt, fileEncoding = "UTF-8", na = "", 
+             row.names = FALSE)
    
 }
 
@@ -333,7 +336,8 @@ for (i in 1:length(especies)) {
 # talvez usando o shp do Brasil em algum loop anterior. Foi tomada uma decisão temporária aqui.
 
 sp_filt_final <- list.files("output_final4", pattern = "sp_filt.csv$", recursive = T, full.names = T)
-arq <- sp_filt_final %>% purrr::map(~read.csv(., row.names = 1, fileEncoding = "UTF-8"))
+
+arq <- sp_filt_final %>% purrr::map(~read.csv(., fileEncoding = "UTF-8"))
 
 # 
 arq2 <- arq %>% purrr::map( ~ select(.,
@@ -361,15 +365,18 @@ outside_brazil <- arq3 %>%
 unique(outside_brazil$scientificName)
 
 # Guardando em uma planilha as ocorrências que caíram fora do Brasil.
-write.csv(outside_brazil, "./results/outside_brazil.csv", fileEncoding = "UTF-8")
+write.csv(outside_brazil, "./results/outside_brazil.csv", na = "", fileEncoding = "UTF-8")
 
-# Filtrar as coordenadas que caíram fora do Brasil
+# Filtrar as coordenadas que caíram fora do Brasil 
+# Adicionalmente deixar a planilha com as colunas prontas para o sistema CNCFlora (excluir algumas colunas)
+# Pensar em trabalhar esse loop anteriormente dentro de outro loop.
 dir.create("output_final5")
 library(plyr)
 
 arq4 <- arq %>% 
    plyr::rbind.fill() %>% 
-   dplyr::filter(!comments == "original coordinates outside Brazil")
+   dplyr::filter(!comments == "original coordinates outside Brazil") %>%
+   dplyr::select(1:31) # Sistema CNCFlora tem 31 colunas, primeira = "modified"; última = "bibliographhicCitation"
 
 # Exportar planilhas com as ocorrências
 for (i in 1:length(especies)){
@@ -387,7 +394,8 @@ for (i in 1:length(especies)){
          occs.f <- subset(occs, dim.null == T)
          occs.f <- dplyr::bind_rows(occs.f)
          print(dim(occs.f))
-         write.csv(occs.f, nome_arquivo, na = "", fileEncoding = "UTF-8")
+         write.csv(occs.f, nome_arquivo, na = "", fileEncoding = "UTF-8",
+                   row.names = FALSE)
       }
       
    } else {
