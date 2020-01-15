@@ -39,7 +39,7 @@ for (i in seq_along(unique(veg_comp$FB))) { # o último item do loop é de NA's
    data <- veg_comp %>% filter(FB == vegname)
    print(data)
    gr <- grep(pattern = vegname, x = finalaoo$vegetationType, ignore.case = TRUE)
-   aoo_veg[[vegname]]  <- "" # Essa parte tamb?m parece ok!
+   aoo_veg[[vegname]]  <- "" # Essa parte também parece ok!
    aoo_veg[[vegname]][gr]  <- data$CNCFlora
 }
 
