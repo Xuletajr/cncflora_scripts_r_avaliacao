@@ -130,11 +130,11 @@ reflora_all5 <- reflora_all4 %>%
                  municipality = Município,
                  locality = 'Descrição.da.Localidade')
 
-# Exportar a ocorr?ncia geral com as colunas j? formatadas
+# Exportar a ocorr?ncia geral com as colunas já formatadas
 write.csv(reflora_all5, "./results/reflora_all5.csv", fileEncoding = "UTF-8",
           na = "", row.names = FALSE)
 
-# Exportar as ocorrencias por esp?cie
+# Exportar as ocorrencias por espécie
 for (i in 1:length(especies)){
    nome_arquivo <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "reflora raw.csv")
    print(paste("Processando", especies[i], i, "de", length(especies), sep = " "))
