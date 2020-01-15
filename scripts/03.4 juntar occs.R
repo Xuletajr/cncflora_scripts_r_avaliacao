@@ -159,7 +159,7 @@ for (i in 1:length(especies)) {
    # A tabela de especie menos esses registros (antijoin)
    tabela_especie4 <- dplyr::anti_join(tabela_especie3, tabela_exclude3)
    
-   # Juntar todas as tabelas do que seria exclu????do (cada passo gerou tabelas diferentes)
+   # Juntar todas as tabelas do que seria excluídas (cada passo gerou tabelas diferentes)
    tabela_exclude_final <- rbind.fill(tabela_exclude1, tabela_exclude2, tabela_exclude3)#dplyr::bind_rows(tabela_exclude1, tabela_exclude2, tabela_exclude3)
    write.csv(tabela_exclude_final, file = nome_excluded, fileEncoding = "UTF-8", 
              na = "", row.names = FALSE)
