@@ -49,19 +49,19 @@ for (i in 1:length(especies)) {
          mutate(catalogNumber = factor(catalogNumber))
       
       # Junta a tabela com os coletores
-      if ("Instituto Nacional de Pesquisas da Amaz?nia (INPA)" %in% tabela_especie$institutionCode) {
+      if ("Instituto Nacional de Pesquisas da Amazônia (INPA)" %in% tabela_especie$institutionCode) {
          proof_name <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "inpa_proof.csv")
          tabela_especie <- left_join(tabela_especie, colectores_inpa)
          # Tudo o que for do inpa bota o coletor e tira a coluna collector
          tabela_especie <- tabela_especie %>%
             mutate(recordedBy = if_else(tabela_especie$institutionCode %in%
-                                           "Instituto Nacional de Pesquisas da Amaz?nia (INPA)", collector, recordedBy)) %>%
+                                           "Instituto Nacional de Pesquisas da Amazônia (INPA)", collector, recordedBy)) %>%
             dplyr::select(-collector)
          
          # Exportar as planilhas
          write.csv(tabela_especie, file = nome_out, row.names = F, fileEncoding = "UTF-8", na = "")
          proof <- tabela_especie %>%
-            filter(institutionCode == "Instituto Nacional de Pesquisas da Amaz?nia (INPA)") %>%
+            filter(institutionCode == "Instituto Nacional de Pesquisas da Amazônia (INPA)") %>%
             dplyr::select(institutionCode, catalogNumber, recordedBy) %>%
             distinct()
          write.csv(proof, file = proof_name, row.names = F, fileEncoding = "UTF-8",  na = "")
@@ -83,7 +83,7 @@ for (i in 1:length(especies)) {
    
    nome_reflora <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "reflora raw.csv")
    nome_gbif <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "inpa.csv")
-   nome_speciesLink <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "speciesLink raw.csv") # com dois underlines ? o correto.
+   nome_speciesLink <- paste0("./output_final/", familias[i],"/",familias[i],"_", especies[i],"_", "speciesLink raw.csv")
    
    nome_out <- paste0("./output_final2/", familias[i],"/",familias[i],"_", especies[i],"_", "juntas.csv")
    
