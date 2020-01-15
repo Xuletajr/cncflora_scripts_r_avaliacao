@@ -130,7 +130,7 @@ reflora_all5 <- reflora_all4 %>%
                  municipality = Município,
                  locality = 'Descrição.da.Localidade')
 
-# Exportar a ocorr?ncia geral com as colunas já formatadas
+# Exportar a ocorrência geral com as colunas já formatadas
 write.csv(reflora_all5, "./results/reflora_all5.csv", fileEncoding = "UTF-8",
           na = "", row.names = FALSE)
 
